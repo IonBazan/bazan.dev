@@ -1,0 +1,19 @@
+@import 'spacing';
+
+@media print {
+  .mw-print-100 {
+    max-width: 100% !important;
+  }
+  .mh-print-100 {
+    max-height: 100% !important;
+  }
+
+  .shadow-print-sm { box-shadow: $box-shadow-sm !important; }
+  .shadow-print { box-shadow: $box-shadow !important; }
+  .shadow-print-lg { box-shadow: $box-shadow-lg !important; }
+  .shadow-print-none { box-shadow: none !important; }
+}
+
+body {
+  -webkit-print-color-adjust: exact !important;
+}

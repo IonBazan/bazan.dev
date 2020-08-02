@@ -1,0 +1,24 @@
+@media print {
+  @each $prop, $abbrev in (margin: m, padding: p) {
+    @each $size, $length in $spacers {
+
+      .#{$abbrev}-print-#{$size} { #{$prop}: $length !important; }
+      .#{$abbrev}t-print-#{$size},
+      .#{$abbrev}y-print-#{$size} {
+        #{$prop}-top: $length !important;
+      }
+      .#{$abbrev}r-print-#{$size},
+      .#{$abbrev}x-print-#{$size} {
+        #{$prop}-right: $length !important;
+      }
+      .#{$abbrev}b-print-#{$size},
+      .#{$abbrev}y-print-#{$size} {
+        #{$prop}-bottom: $length !important;
+      }
+      .#{$abbrev}l-print-#{$size},
+      .#{$abbrev}x-print-#{$size} {
+        #{$prop}-left: $length !important;
+      }
+    }
+  }
+}

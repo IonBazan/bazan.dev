@@ -1,0 +1,48 @@
+<aside class="sidebar col-12 col-md-4 px-md-4">
+    <section class="sidebar-section">
+        <h4 class="section-heading">Skills & Tools</h4>
+        <ul class="list-unstyled">
+            {{ range $.Site.Data.resume.skills.backend }}
+            <li class="mb-2 small">
+                {{ .name }}
+                <div class="progress">
+                    <div class="progress-bar bg-secondary"  role="progressbar" style="width: {{ .level }}%;" aria-valuenow="{{ .level }}" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </li>
+            {{ end }}
+        </ul>
+        <div class="mb-4">
+            {{ range $.Site.Data.resume.skills.others }}
+            <span class="badge badge-pill badge-secondary border border-dark">{{ . }}</span>
+            {{ end }}
+        </div>
+    </section>
+    <section class="sidebar-section">
+        <h4 class="section-heading">Education</h4>
+        <ul class="list-unstyled">
+            {{ range $.Site.Data.resume.education }}
+            <li class="mb-2">
+                <div class="font-weight-bold">{{ .degree }}</div>
+                <div class="text-muted">{{ .university }}</div>
+                <div class="text-muted">{{ .timerange }}</div>
+            </li>
+            {{ end }}
+        </ul>
+    </section>
+    <section class="sidebar-section">
+        <h4 class="section-heading">Languages</h4>
+        <ul class="list-unstyled">
+            {{ range $language, $level := $.Site.Data.resume.languages }}
+            <li>{{ $language }} <span class="text-muted">({{ $level }})</span></li>
+            {{ end }}
+        </ul>
+    </section>
+    <section class="sidebar-section">
+        <h4 class="section-heading">Interests</h4>
+        <ul class="list-unstyled">
+            {{ range $.Site.Data.resume.interests }}
+            <li class="mb-2">{{ . }}</li>
+            {{ end }}
+        </ul>
+    </section>
+</aside>

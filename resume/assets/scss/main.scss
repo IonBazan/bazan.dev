@@ -1,0 +1,75 @@
+@import '../../node_modules/bootstrap/scss/bootstrap';
+@import 'print/print';
+
+.profile-image {
+  max-width: 180px;
+}
+
+.timeline {
+  &::before {
+    content: "";
+    display: inline-block;
+    border: 2px solid $gray-400;
+    left: 0;
+    top: 15px;
+    bottom: 0;
+    position: absolute;
+  }
+
+  .item {
+    &::before {
+      content: "";
+      display: inline-block;
+      position: absolute;
+      left: -30px;
+      top: 15px;
+      width: 15px;
+      height: 15px;
+      border: 4px solid $gray-600;
+      background: $white;
+      border-radius: 50%;
+    }
+  }
+}
+
+.section-heading {
+  position: relative;
+  padding-left: 1rem;
+  margin-bottom: 1rem;
+  text-transform: uppercase;
+
+  &::before {
+    content: "";
+    display: inline-block;
+    width: 5px;
+    height: 100%;
+    background: $primary;
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+}
+
+.sidebar {
+  .sidebar-section {
+    @extend .pb-2;
+  }
+}
+
+.progress .progress-bar {
+  animation-name: progress-bar-animation;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in;
+  animation-duration: .5s;
+}
+
+@keyframes progress-bar-animation {
+  0% {transform: translateX(-100%);}
+  100% {transform: translateX(0);}
+}
+
+@include media-breakpoint-up('md') {
+  #contact, .sidebar {
+    border-left: $border-width solid $border-color !important;
+  }
+}

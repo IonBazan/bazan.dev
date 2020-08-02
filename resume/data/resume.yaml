@@ -1,0 +1,101 @@
+name: Ion Bazan
+position: Senior Software Developer
+contact:
+  phone: +65 9447 2174
+  email: ion.bazan@gmail.com
+  location: Singapore
+  website: bazan.dev
+  github: IonBazan
+  linkedin: linkedin.com/in/ion-bazan
+
+summary:  |
+  Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum non eros pulvinar, luctus lorem a, scelerisque nunc. Nunc accumsan sed purus quis vulputate. Vestibulum et egestas velit. Quisque viverra odio urna, a rutrum risus sollicitudin vitae. Sed eu porta nisi. Morbi sed nibh sed dolor aliquet lacinia nec et neque. Proin tristique risus imperdiet orci aliquam, sed tincidunt sapien tincidunt. Quisque ut lacus sit amet dolor aliquet euismod.
+
+experience:
+  - company: Secretlab
+    country: Singapore
+    position: Senior Backend Developer
+    timeperiod: August 2020 - now
+    description: Developing e-commerce and internal CRM platform.
+    website: https://secretlab.sg/
+
+  -
+    company: BeMyGuest PTE LTD
+    country: Singapore
+    position: Software Developer
+    timeperiod: July 2019 - July 2019
+    description: Developing B2B and B2C ticketing platform for tours & activities in PHP7, Laravel and Vue.js. Implementing external API integrations and optimizing application performance.
+    website: https://bemyguest.com.sg/
+    technologies: [PHP, JavaScript, Laravel, MySQL, Docker, Vue.js]
+
+  - company: Going.
+    country: Poland
+    position: Software Developer
+    timeperiod: July 2018 - June 2019
+    description: Developing an event platform and splitting it to microservices. Creating POS API based on Symfony 4 and frontend app on top of Raspberry Pi 3 using Electron and React with BOCA thermal printer.
+    website: https://goingapp.pl/
+    technologies: [PHP, JavaScript, Laravel, Symfony 4, MySQL, Docker, React, Electron, Raspberry Pi, NodeJS, Thermal Printers]
+
+  - company: XSolve
+    country: Poland
+    position: Software Developer
+    timeperiod: September 2015 - June 2018
+    description: Developing B2B e-commerce, CRM and B2C systems using Symfony 3, Yii, PostgreSQL, MariaDB, ElasticSearch, GraphQL
+    website: https://boldare.com/
+    technologies: [PHP, JavaScript, Symfony 4, MySQL, PostgreSQL, Yii, Docker, ElasticSearch, MariaDB, GraphQL, jQuery]
+
+  - company: Extreme Coding Ltd
+    country: Poland
+    position: Junior PHP Developer
+    timeperiod: April 2015 - September 2015
+    description: Developing e-commerce (Laravel and custom CMS) and social network system (Symfony 2)
+    website: https://extremecoding.pl/
+    technologies: [PHP, JavaScript, Symfony 2, OctoberCMS, MySQL, jQuery]
+
+education:
+  - degree: BSc in Information Technology
+    timeperiod: October 2012 - January 2016
+    university: Silesian University of Technology
+
+skills:
+  backend:
+    - name: PHP 7
+      level: 99
+    - name: Symfony 5
+      level: 90
+    - name: Laravel
+      level: 60
+    - name: PostgreSQL
+      level: 70
+    - name: MySQL
+      level: 85
+    - name: MongoDB
+      level: 70
+    - name: AWS
+      level: 40
+    - name: JavaScript
+      level: 80
+    - name: React
+      level: 60
+  others:
+    - DevOps
+    - Code Review
+    - Docker
+    - Kubernetes
+    - Git
+    - Unit Testing
+    - Continuous Integration
+
+languages:
+  Polish: Native
+  English: Advanced
+  Russian: Advanced
+
+interests:
+  - Open Source
+  - Longboard
+  - Travel
+  - Hiking
+
+projects: []
+
