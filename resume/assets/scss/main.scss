@@ -63,6 +63,14 @@
   animation-duration: .5s;
 }
 
+.codersrank-widget {
+  --bg-color: #{$body-bg};
+  --header-bg-color: #{$body-bg};
+  --header-text-color: #{$body-color};
+  --badge-bg-color: #{$body-bg};
+  --badge-text-color: #{$body-color};
+}
+
 @keyframes progress-bar-animation {
   0% {transform: translateX(-100%);}
   100% {transform: translateX(0);}
