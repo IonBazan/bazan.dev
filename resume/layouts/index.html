@@ -4,14 +4,14 @@
     {{ partial "head.html" . }}
 </head>
 <body>
-    {{ partial "banner.html" }}
+    {{ partial "banner.html" . }}
     <div class="container px-3 px-lg-5 px-print-0 mw-print-100">
         <article id="resume" class="mx-auto p-5 m-5 shadow-lg shadow-print-none m-print-0 p-print-4">
             {{ partial "header.html" . }}
             <hr>
             <div class="py-2">
                 <p class="mb-0 text-justify">
-                    {{ $.Site.Data.resume.summary }}
+                    {{ (replace $.Site.Data.resume.summary "\n" "<br/>") | safeHTML }}
                 </p>
             </div>
             <hr>
