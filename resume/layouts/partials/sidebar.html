@@ -13,7 +13,7 @@
         </ul>
         <div class="mb-4">
             {{ range $.Site.Data.resume.skills.others }}
-            <span class="badge badge-pill badge-secondary border border-dark">{{ . }}</span>
+            <span class="badge rounded-pill bg-secondary border border-dark">{{ . }}</span>
             {{ end }}
         </div>
     </section>
@@ -22,7 +22,7 @@
         <ul class="list-unstyled">
             {{ range $.Site.Data.resume.education }}
             <li class="mb-2">
-                <div class="font-weight-bold">{{ .degree }}</div>
+                <div class="fw-bold">{{ .degree }}</div>
                 <div class="text-muted">{{ .university }}</div>
                 <div class="text-muted">{{ .timerange }}</div>
             </li>

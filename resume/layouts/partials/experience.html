@@ -1,24 +1,24 @@
 <section id="experience">
     <h4 class="section-heading">Work Experience</h4>
-    <div class="timeline position-relative pl-4">
+    <div class="timeline position-relative ps-4">
         {{ range $.Site.Data.resume.experience }}
-        <div class="item mb-4 position-relative">
+        <div class="item mb-4 position-relative print-page-break-avoid">
             <div class="row align-items-center mb-2">
                 <h5 class="col-12 col-md-6 col-lg-6 mb-2 mb-md-0">
                     {{ .position }}
                 </h5>
-                <div class="col-12 col-md-6 col-lg-6 text-muted text-left text-md-right small">
+                <div class="col-12 col-md-6 col-lg-6 text-muted text-start text-md-end small">
                     <a class="text-dark" href="{{ .website }}"target="_blank">{{ .company }} [{{ .country }}]</a>
                 </div>
-                <div class="col-12 col-md-6 col-lg-6 text-muted text-left small">
+                <div class="col-12 col-md-6 col-lg-6 text-muted text-start small">
                     {{ .timeperiod }}
                 </div>
             </div>
-            <p class="text-justify mb-0">{{ .description }}</p>
+            <p class="mb-0">{{ .description }}</p>
             {{ if .technologies }}
             <p>
                 {{ range .technologies }}
-                <span class="badge badge-pill badge-light border">{{ . }}</span>
+                <span class="badge rounded-pill bg-light text-dark border">{{ . }}</span>
                 {{ end }}
             </p>
             {{ end }}

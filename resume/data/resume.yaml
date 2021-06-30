@@ -12,13 +12,20 @@ summary: |
   I am a Singapore-based Senior Software Developer who is passinate about good practices, clean code and containerized scalable environments.
   With over 5 years of experience in PHP & Symfony and 3 in Laravel and Docker, I have a deep understanding of frameworks' internals and I love writing domain-oriented and framework-agnostic code that is easy to test, port and refactor.
   I am contributing to several Open-Source projects and released a few packages that are used by other developers.
-  Seeking new opportunities and challenging roles in fast-growing areas (fintech, banking, IoT) that would involve working with multiple technologies and serverless environments.
 
 experience:
+  - company: PomeloPay
+    country: Singapore
+    position: Lead PHP Developer
+    timeperiod: June 2021 - now
+    description: Developing payment solutions and management portals with Symfony 5, MongoDB, React and Docker. Introducing CI/CD pipelines to automate deployments.
+    website: https://pomelopay.com/
+    technologies: [PHP, NodeJS, AWS, Symfony 5, MongoDB, React, Docker]
+
   - company: Secretlab
     country: Singapore
     position: Senior Backend Developer
-    timeperiod: August 2020 - now
+    timeperiod: August 2020 - May 2021
     description: Developing e-commerce and internal CRM platform. Flawlessly migrating and refactoring legacy system into a modern framework using and improving scalability. Incorporating serverless components improve scalability during traffic peaks. Integrating with external services such as Shopify.
     website: https://secretlab.sg/
     technologies: [PHP, NodeJS, AWS Lambda, Laravel, CodeIgniter, Symfony, MariaDB, Docker, Shopify]

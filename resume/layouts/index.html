@@ -1,23 +1,23 @@
 <!DOCTYPE html>
-<html lang="{{ .Site.LanguageCode }}">
+<html lang="{{ .Site.LanguageCode }}" id="html">
 <head>
     {{ partial "head.html" . }}
 </head>
 <body>
     {{ partial "banner.html" . }}
     <div class="container px-3 px-lg-5 px-print-0 mw-print-100">
-        <article id="resume" class="mx-auto p-5 m-5 shadow-lg shadow-print-none m-print-0 p-print-4">
+        <article id="resume" class="mx-auto p-5 m-5 shadow-lg shadow-print-none m-print-0 p-print-2">
             {{ partial "header.html" . }}
             <hr>
             <div class="py-2">
-                <p class="mb-0 text-justify">
+                <p class="mb-0">
                     {{ (replace $.Site.Data.resume.summary "\n" "<br/>") | safeHTML }}
                 </p>
             </div>
             <hr>
             <div id="resume-body">
                 <div class="row">
-                    <div class="col-12 col-md-8 pr-md-5">
+                    <div class="col-12 col-md-8 pe-md-5">
                         {{ partial "experience.html" . }}
                         {{ if $.Site.Data.resume.projects }}
                         {{ partial "projects.html" . }}
