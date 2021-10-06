@@ -2,3 +2,6 @@ baseURL: "https://bazan.dev/"
 languageCode: 'en-us'
 title: 'Ion Bazan - Resume'
 disableKinds: [sitemap, RSS]
+outputFormats:
+  HTML:
+    baseName: myindex
