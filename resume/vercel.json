@@ -1,0 +1,19 @@
+{
+  "rewrites": [
+    {
+      "source": "/",
+      "has": [
+        {
+          "type": "header",
+          "key": "User-Agent",
+          "value": ".*(curl|wget).*"
+        }
+      ],
+      "destination": "/raw.txt"
+    },
+    {
+      "source": "/",
+      "destination": "/myindex.html"
+    }
+  ]
+}
