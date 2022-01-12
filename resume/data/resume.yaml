@@ -17,18 +17,19 @@ experience:
   - company: PomeloPay
     country: Singapore
     position: Lead Full Stack Developer (Banking Solutions)
-    timeperiod: June 2021 - now
+    timeperiod: May 2021 - now
     description: |
       Leading multiple projects in the Banking Solutions team, elevating the banking experience for financial institutions in APAC utilising the latest in payment technologies and serverless environment.
       Revamping existing platforms used by bank executives to manage retail customers and merchants.
       Improving Continuous Integration and Continuous Deployment pipelines in order to deliver better developer experience.
+      Managing AWS Container infrastructure using CloudFormation templates.
     website: https://pomelopay.com/
-    technologies: [PHP 8, Serverless, React, TypeScript, NodeJS, AWS, Symfony 5, MongoDB, Docker]
+    technologies: [PHP 8, Serverless, React, TypeScript, NodeJS, AWS, CloudFormation, Symfony 5, MongoDB, Docker]
 
   - company: Secretlab
     country: Singapore
     position: Senior Backend Developer
-    timeperiod: August 2020 - May 2021
+    timeperiod: August 2020 - April 2021
     description: Developing e-commerce and internal CRM platform. Flawlessly migrating and refactoring legacy system into a modern framework using and improving scalability. Incorporating serverless components improve scalability during traffic peaks. Integrating with external services such as Shopify.
     website: https://secretlab.sg/
     technologies: [PHP 8, NodeJS, AWS Lambda, Laravel, CodeIgniter, Symfony, MariaDB, Docker, Shopify]
