@@ -5,3 +5,6 @@ disableKinds: [sitemap, RSS]
 outputFormats:
   HTML:
     baseName: myindex
+build:
+  writeStats: true
+disableHugoGeneratorInject: true

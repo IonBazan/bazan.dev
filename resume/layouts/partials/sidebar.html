@@ -6,7 +6,7 @@
             <li class="mb-2 small">
                 {{ .name }}
                 <div class="progress">
-                    <div class="progress-bar bg-secondary"  role="progressbar" style="width: {{ .level }}%;" aria-valuenow="{{ .level }}" aria-valuemin="0" aria-valuemax="100"></div>
+                    <div class="progress-bar bg-secondary"  role="progressbar" style="width: {{ .level }}%;" aria-valuenow="{{ .level }}" aria-valuemin="0" aria-valuemax="100" aria-label="{{ .level }}%"></div>
                 </div>
             </li>
             {{ end }}
