@@ -6,7 +6,7 @@
         {
           "type": "header",
           "key": "User-Agent",
-          "value": ".*(curl|wget).*"
+          "value": ".*(curl|wget|httpie|postman).*"
         }
       ],
       "destination": "/raw.txt"
