@@ -79,3 +79,8 @@ $container-max-widths: (
     border-left: $border-width solid $border-color !important;
   }
 }
+
+// Use instead of .d-none if you don't want !important there
+.hidden {
+  display: none;
+}

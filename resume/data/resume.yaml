@@ -9,7 +9,7 @@ contact:
   linkedin: linkedin.com/in/ion-bazan
 
 summary: |
-  I am a Singapore-based Senior Software Developer who is passinate about good practices, clean code and containerized scalable environments.
+  I am a Singapore-based Lead Software Developer who is passionate about good practices, clean code and containerized scalable environments.
   With over 6 years of experience in PHP & Symfony and 4 in Laravel and Docker, I have a deep understanding of frameworks' internals and I love writing domain-oriented and framework-agnostic code that is easy to test, port and refactor.
   I am contributing to several Open-Source projects and released a few packages that are used by other developers.
 
@@ -17,14 +17,14 @@ experience:
   - company: PomeloPay
     country: Singapore
     position: Lead Full Stack Developer (Banking Solutions)
-    timeperiod: May 2021 - now
+    timeperiod: May 2021 - Present
     description: |
       Leading multiple projects in the Banking Solutions team, elevating the banking experience for financial institutions in APAC utilising the latest in payment technologies and serverless environment.
       Revamping existing platforms used by bank executives to manage retail customers and merchants.
       Improving Continuous Integration and Continuous Deployment pipelines in order to deliver better developer experience.
       Managing AWS Container infrastructure using CloudFormation templates.
     website: https://pomelopay.com/
-    technologies: [PHP 8, Serverless, React, TypeScript, NodeJS, AWS, CloudFormation, Symfony 5, MongoDB, Docker]
+    technologies: [PHP 8, Serverless, React, TypeScript, NodeJS, AWS, CloudFormation, Symfony 6, MongoDB, Docker]
 
   - company: Secretlab
     country: Singapore
@@ -71,11 +71,17 @@ education:
     timeperiod: October 2012 - January 2016
     university: Silesian University of Technology
 
+certificates:
+  - name: Certified ScrumMaster
+    date: 28 June 2022
+    issuer: ScrumAlliance
+    url: https://bcert.me/sjldvnxjo
+
 skills:
   backend:
     - name: PHP 8
       level: 99
-    - name: Symfony 5
+    - name: Symfony 6
       level: 90
     - name: Laravel
       level: 60
@@ -86,8 +92,8 @@ skills:
     - name: MongoDB
       level: 70
     - name: AWS
-      level: 40
-    - name: JavaScript
+      level: 50
+    - name: TypeScript
       level: 80
     - name: React
       level: 60
@@ -99,6 +105,7 @@ skills:
     - Git
     - Unit Testing
     - Continuous Integration
+    - TDD
 
 languages:
   Polish: Native
@@ -108,9 +115,36 @@ languages:
 interests:
   - Open Source
   - Longboard
-  - Dragon Boat
-  - Travel
+  - Outrigger Canoeing
   - Hiking
 
-projects: []
+projects:
+  - name: Composer-Diff
+    timeperiod: June 2020 - Present
+    url: https://github.com/IonBazan/composer-diff
+    keywords: [PHP, Composer, Infection]
+    description: Compares composer.lock changes and generates Markdown report so you can use it in PR description.
 
+  - name: Laravel Container Debug
+    timeperiod: July 2020 - Present
+    url: https://github.com/IonBazan/laravel-container-debug
+    keywords: [PHP, Laravel, Debugging]
+    description: Lists available services in Laravel IoC Container. Works with Laravel 5.4+, 6.x, 7.x, 8.x and 9.x.
+
+  - name: Alibaba Cloud API Gateway HTTP Request Signer for PHP
+    timeperiod: April 2020 - Present
+    url: https://github.com/IonBazan/aliyun-http-signer
+    keywords: [PHP, Guzzle, Symfony, PSR-7, Aliyun]
+    description: PSR-7-compatible Alibaba Cloud API Gateway request signing implementation. Integrates with Guzzle ⛽️ and HttPlug 🐘.
+
+  - name: Doctrine MongoDB ODM
+    timeperiod: August 2021 - Present
+    url: https://github.com/doctrine/mongodb-odm
+    keywords: [PHP, Doctrine, Symfony, MongoDB, ODM]
+    description: Maintaining and contributing to Doctrine MongoDB ODM and Doctrine MongoDB Bundle for Symfony.
+
+  - name: Symfony Polyfill
+    timeperiod: August 2018 - Present
+    url: https://github.com/symfony/polyfill
+    keywords: [PHP, Symfony]
+    description: Various contributions to Symfony Polyfill library, allowing to write future-compatible code.

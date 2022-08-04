@@ -30,6 +30,20 @@
         </ul>
     </section>
     <section class="sidebar-section">
+        <h4 class="section-heading">Certificates</h4>
+        <ul class="list-unstyled">
+            {{ range $.Site.Data.resume.certificates }}
+            <li class="mb-2">
+                <div class="fw-bold">
+                    <a href="{{ .url }}" class="text-dark" target="_blank">{{ .name }}</a>
+                </div>
+                <div class="text-muted">{{ .issuer }}</div>
+                <small class="text-muted">{{ .date }}</small>
+            </li>
+            {{ end }}
+        </ul>
+    </section>
+    <section class="sidebar-section">
         <h4 class="section-heading">Languages</h4>
         <ul class="list-unstyled">
             {{ range $language, $level := $.Site.Data.resume.languages }}
