@@ -2,7 +2,7 @@
   "name": "ion-bazan-resume",
   "version": "1.0.0",
   "dependencies": {
-    "bootstrap": "^5.2.3"
+    "bootstrap": "^5.3.2"
   },
   "devDependencies": {
     "@fullhuman/postcss-purgecss": "^5.0.0",
