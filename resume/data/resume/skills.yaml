@@ -1,0 +1,30 @@
+backend:
+  - name: PHP 8
+    level: 99
+  - name: Symfony 7
+    level: 90
+  - name: Laravel
+    level: 70
+  - name: PostgreSQL
+    level: 70
+  - name: MySQL
+    level: 85
+  - name: MongoDB
+    level: 70
+  - name: AWS
+    level: 50
+  - name: TypeScript
+    level: 80
+  - name: React
+    level: 60
+others:
+  - DevOps
+  - Golang
+  - Team Leading
+  - Code Review
+  - Docker
+  - Kubernetes
+  - Git
+  - Unit Testing
+  - Continuous Integration
+  - TDD

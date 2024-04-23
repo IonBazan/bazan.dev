@@ -1,0 +1,9 @@
+company: Aspire
+country: Singapore
+position: Tech Lead (Treasury) / Associate Architect
+timeperiod: November 2022 - Now
+start: 2022-11-15
+end: ~
+description:
+website: https://aspireapp.com/
+technologies: [PHP 8, Microservices, Golang, Vue, AWS, Docker, TypeScript, Laravel]

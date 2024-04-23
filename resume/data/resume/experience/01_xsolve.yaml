@@ -1,0 +1,9 @@
+company: XSolve
+country: Poland
+position: Software Developer
+timeperiod: September 2015 - June 2018
+start: 2015-09-22
+end: 2018-06-30
+description: Developing B2B e-commerce, CRM and B2C systems using Symfony 3, Yii, PostgreSQL, MariaDB, ElasticSearch, GraphQL
+website: https://boldare.com/
+technologies: [PHP, JavaScript, Symfony 4, Doctrine ORM, MySQL, PostgreSQL, Yii, Docker, ElasticSearch, MariaDB, GraphQL, jQuery]

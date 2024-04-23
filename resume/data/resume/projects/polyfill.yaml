@@ -1,0 +1,6 @@
+name: Symfony Polyfill
+timeperiod: August 2018 - Present
+url: https://github.com/symfony/polyfill
+keywords: [PHP, Symfony]
+description: Various contributions to Symfony Polyfill library, allowing to write future-compatible code.
+order: 4

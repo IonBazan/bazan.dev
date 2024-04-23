@@ -1,6 +1,6 @@
 <section class="project-section py-3">
     <h4 class="section-heading">Open-Source Projects</h4>
-    {{ range $.Site.Data.resume.projects }}
+    {{ range sort . "order" }}
     <div class="item mb-3">
         <div class="item-heading row align-items-center">
             <h5 class="item-title col-12">

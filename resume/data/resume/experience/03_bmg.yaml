@@ -1,0 +1,9 @@
+company: BeMyGuest PTE LTD
+country: Singapore
+position: Software Developer
+timeperiod: July 2019 - July 2020
+start: 2019-07-01
+end: 2020-07-31
+description: Developing B2B and B2C ticketing platform for tours & activities in PHP7, Laravel and Vue.js. Implementing external API integrations and optimizing application performance.
+website: https://bemyguest.com.sg/
+technologies: [PHP, JavaScript, Laravel, MySQL, Docker, Vue.js]

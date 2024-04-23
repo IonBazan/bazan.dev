@@ -1,0 +1,6 @@
+name: Laravel Container Debug
+timeperiod: July 2020 - Present
+url: https://github.com/IonBazan/laravel-container-debug
+keywords: [PHP, Laravel, Debugging]
+description: Lists available services in Laravel IoC Container. Works with Laravel 5.4+, 6.x, 7.x, 8.x and 9.x.
+order: 1

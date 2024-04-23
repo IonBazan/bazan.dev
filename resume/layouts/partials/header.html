@@ -7,41 +7,43 @@
                         src="{{ ((resources.Get "img/avatar.jpg").Resize "600x q100 webp").RelPermalink }}"
                         width="100%"
                         height="100%"
-                        alt="{{ $.Site.Data.resume.name }}"
+                        alt="{{ .name }}"
                 >
             </div>
             <div class="text-start ms-3">
-                <h1 class="mb-0 text-uppercase fw-bold">{{ $.Site.Data.resume.name }}</h1>
-                <h2 class="mb-3 mb-md-0 h5">{{ $.Site.Data.resume.position }}</h2>
+                <h1 class="mb-0 text-uppercase fw-bold">{{ .name }}</h1>
+                <h2 class="mb-3 mb-md-0 h5">{{ .position }}</h2>
             </div>
         </div>
+        {{ with .contact }}
         <div id="contact" class="col-12 col-md-4 small">
             <ul class="list-unstyled mb-0">
                 <li class="mb-2">
                     <i class="fas fa-phone-square fa-fw fa-lg me-2"></i>
-                    <a class="text-dark" href="tel:{{ $.Site.Data.resume.contact.phone }}">{{ $.Site.Data.resume.contact.phone }}</a>
+                    <a class="text-dark" href="tel:{{ .phone }}">{{ .phone }}</a>
                 </li>
                 <li class="mb-2">
                     <i class="fas fa-envelope-square fa-fw fa-lg me-2"></i>
-                    <a class="text-dark" href="mailto:{{ $.Site.Data.resume.contact.email }}">{{ $.Site.Data.resume.contact.email }}</a>
+                    <a class="text-dark" href="mailto:{{ .email }}">{{ .email }}</a>
                 </li>
                 <li class="mb-2">
                     <i class="fas fa-globe-asia fa-fw fa-lg me-2"></i>
-                    <a class="text-dark" href="https://{{ $.Site.Data.resume.contact.website }}">{{ $.Site.Data.resume.contact.website }}</a>
+                    <a class="text-dark" href="https://{{ .website }}">{{ .website }}</a>
                 </li>
                 <li class="mb-2">
                     <i class="fab fa-github-square fa-fw fa-lg me-2"></i>
-                    <a class="text-dark" href="https://github.com/{{ $.Site.Data.resume.contact.github }}">@{{ $.Site.Data.resume.contact.github }}</a>
+                    <a class="text-dark" href="https://github.com/{{ .github }}">@{{ .github }}</a>
                 </li>
                 <li class="mb-2">
                     <i class="fab fa-linkedin fa-fw fa-lg me-2"></i>
-                    <a class="text-dark" href="https://{{ $.Site.Data.resume.contact.linkedin }}">{{ $.Site.Data.resume.contact.linkedin }}</a>
+                    <a class="text-dark" href="https://{{ .linkedin }}">{{ .linkedin }}</a>
                 </li>
                 <li class="mb-0 text-dark">
                     <i class="fas fa-map-marker-alt fa-fw fa-lg me-2"></i>
-                    {{ $.Site.Data.resume.contact.location }}
+                    {{ .location }}
                 </li>
             </ul>
         </div>
+        {{ end }}
     </div>
 </div>

@@ -1,0 +1,13 @@
+company: PomeloPay
+country: Singapore
+position: Lead Full Stack Developer (Banking Solutions)
+timeperiod: May 2021 - November 2022
+start: 2021-05-01
+end: 2022-11-14
+description: |
+  Leading multiple projects in the Banking Solutions team, elevating the banking experience for financial institutions in APAC utilising the latest in payment technologies and serverless environment.
+  Revamping existing platforms used by bank executives to manage retail customers and merchants.
+  Improving Continuous Integration and Continuous Deployment pipelines in order to deliver better developer experience.
+  Managing AWS Container infrastructure using CloudFormation templates.
+website: https://pomelopay.com/
+technologies: [PHP 8, Serverless, React, TypeScript, NodeJS, AWS, CloudFormation, Symfony 6, MongoDB, Docker]

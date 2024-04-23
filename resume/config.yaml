@@ -1,5 +1,6 @@
 baseURL: "https://bazan.dev/"
-languageCode: 'en-us'
+relativeURLs: true
+languageCode: en
 title: 'Ion Bazan - Resume'
 disableKinds: [sitemap, RSS]
 outputFormats:
