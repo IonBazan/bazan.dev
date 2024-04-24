@@ -4,7 +4,7 @@
             <div class="mb-3 mb-md-0 ms-md-0 me-md-5 flex-shrink-0">
                 <img
                         class="profile-image rounded-circle border"
-                        src="{{ ((resources.Get "img/avatar.jpg").Resize "600x q100 webp").RelPermalink }}"
+                        src="{{ ((resources.Get "img/avatar.jpg").Process "resize 600x q100 webp").RelPermalink }}"
                         width="100%"
                         height="100%"
                         alt="{{ .name }}"

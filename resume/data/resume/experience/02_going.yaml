@@ -1,7 +1,6 @@
 company: Going.
 country: Poland
 position: Software Developer
-timeperiod: July 2018 - June 2019
 start: 2018-07-01
 end: 2019-06-30
 description: Developing an event platform and splitting it to microservices. Creating POS API based on Symfony 4 and frontend app on top of Raspberry Pi 3 using Electron and React with BOCA thermal printer.

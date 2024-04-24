@@ -1,6 +1,6 @@
 name: Doctrine MongoDB ODM
-timeperiod: August 2021 - Present
-url: https://github.com/doctrine/mongodb-odm
-keywords: [PHP, Doctrine, Symfony, MongoDB, ODM]
+start: 2021-08-04
+repo: doctrine/mongodb-odm
+keywords: [Doctrine, Symfony, MongoDB, ODM]
 description: Maintaining and contributing to Doctrine MongoDB ODM and Doctrine MongoDB Bundle for Symfony.
 order: 3

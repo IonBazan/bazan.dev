@@ -1,6 +1,6 @@
 @import 'spacing';
 
-$print-page-size: a3;
+$print-page-size: a4;
 $print-body-min-width: map-get($grid-breakpoints, "lg");
 
 @media print {

@@ -4,17 +4,17 @@
         {{ range sort . "start" "desc" }}
         <div class="item mb-4 position-relative print-page-break-avoid">
             <div class="row align-items-center mb-2">
-                <h5 class="col-12 col-md-6 col-lg-6 mb-2 mb-md-0">
+                <h5 class="col-12 col-sm-8 col-lg-8 mb-0 mb-md-0">
                     {{ .position }}
                 </h5>
-                <div class="col-12 col-md-6 col-lg-6 text-muted text-start text-end small">
+                <div class="col-12 col-sm-4 col-lg-4 text-muted text-start text-sm-end small">
                     <a class="text-dark" href="{{ .website }}" target="_blank" rel="noreferrer">{{ .company }} [{{ .country }}]</a>
                 </div>
-                <div class="col-12 col-md-6 col-lg-6 text-muted text-start small">
+                <div class="col-12 text-muted text-start small">
                     {{ partial "_timerange.html" . }}
                 </div>
             </div>
-            <p class="mb-0">{{ .description }}</p>
+            <p class="mb-3">{{ .description }}</p>
             {{ if .technologies }}
             <p>
                 {{ range .technologies }}

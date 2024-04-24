@@ -59,6 +59,7 @@ $container-max-widths: (
 .sidebar {
   .sidebar-section {
     @extend .pb-2;
+    page-break-inside: avoid;
   }
 }
 

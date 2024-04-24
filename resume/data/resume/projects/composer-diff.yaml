@@ -1,6 +1,6 @@
 name: Composer-Diff
-timeperiod: June 2020 - Present
-url: https://github.com/IonBazan/composer-diff
-keywords: [PHP, Composer, Infection]
+start: 2020-06-22
+repo: IonBazan/composer-diff
+keywords: [Composer, Utilities, Mutation Testing]
 description: Compares composer.lock changes and generates Markdown report so you can use it in PR description.
 order: 0
