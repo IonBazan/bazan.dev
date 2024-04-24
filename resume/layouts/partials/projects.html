@@ -15,15 +15,9 @@
         <div class="item-content">
             <p>{{ .description }}</p>
             <p>
-                <span class="badge rounded-pill bg-light text-dark border">
-                    <i class="far fa-fw fa-star"></i> {{ $details.stargazers_count | lang.FormatNumber 0 }}
-                </span>
-                <span class="badge rounded-pill bg-light text-dark border">
-                    <i class="fas fa-fw fa-code-branch"></i> {{ $details.forks_count | lang.FormatNumber 0 }}
-                </span>
-                <span class="badge rounded-pill bg-light text-dark border">
-                    {{ $details.language }}
-                </span>
+                <span class="badge rounded-pill bg-light text-dark border"><i class="far fa-fw fa-star"></i> {{ $details.stargazers_count | lang.FormatNumber 0 }}</span>
+                <span class="badge rounded-pill bg-light text-dark border"><i class="fas fa-fw fa-code-branch"></i> {{ $details.forks_count | lang.FormatNumber 0 }}</span>
+                <span class="badge rounded-pill bg-light text-dark border">{{ $details.language }}</span>
                 {{ range .keywords }}
                 <span class="badge rounded-pill bg-light text-dark border">{{ . }}</span>
                 {{ end }}
