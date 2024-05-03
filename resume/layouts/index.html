@@ -12,7 +12,7 @@
             <hr>
             <div class="py-2">
                 <p class="mb-0">
-                    {{ (replace .summary "\n" "<br/>") | safeHTML }}
+                    {{ .summary | markdownify }}
                 </p>
             </div>
             <hr>

@@ -1,6 +1,7 @@
 <meta charset="utf-8" />
 <title>{{ .Title }}</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="revised" content="{{ time.Now.Format $.Site.Params.isoDateFormat }}" />
 <meta name="description" content="{{ $.Site.Data.resume.summary }}">
 <meta property="og:image" content="{{ ((resources.Get "img/avatar.jpg").Resize "600x q100 webp").RelPermalink }}">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
