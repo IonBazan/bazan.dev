@@ -14,7 +14,7 @@
                     {{ partial "_timerange.html" . }}
                 </div>
             </div>
-            <p class="mb-3">{{ .description }}</p>
+            <p class="mb-3 small">{{ .description | markdownify }}</p>
             {{ if .technologies }}
             <p>
                 {{ range .technologies }}
