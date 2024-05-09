@@ -13,7 +13,7 @@
     },
     {
       "source": "/",
-      "destination": "/myindex.html"
+      "destination": "/resume.html"
     }
   ]
 }
