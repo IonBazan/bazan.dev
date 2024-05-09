@@ -20,8 +20,13 @@
                 <div class="row">
                     <div class="col-12 col-md-8 pe-md-5">
                         {{ partial "experience.html" .experience }}
+
                         {{ if .projects }}
-                        {{ partial "projects.html" .projects }}
+                            {{ partial "projects.html" (dict "title" "Projects" "projects" .projects)}}
+                        {{ end }}
+
+                        {{ if .open_source }}
+                            {{ partial "projects.html" (dict "title" "Open-Source Projects" "projects" .open_source) }}
                         {{ end }}
                     </div>
                     {{ partial "sidebar.html" . }}

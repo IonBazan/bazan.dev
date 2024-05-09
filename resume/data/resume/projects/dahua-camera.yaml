@@ -1,0 +1,10 @@
+name: Dahua Camera Manager
+start: 2018-09-01
+end: 2019-05-30
+language: PHP
+keywords: [Embedded, Raspberry Pi, Docker, Symfony, React, IoT, Reverse Engineering]
+description: |
+  Built an embedded, dockerized Symfony-based application allowing to manage Dahua IP cameras and schedule recordings using reverse-engineered camera API for road traffic monitoring purposes.\
+  Included a remote-accessible React-based frontend for live camera feed, file management, camera configuration and recording scheduling.\
+  Deployed as a self-updating Dockerized application on battery-powered Raspberry Pi devices fleet.
+order: 0

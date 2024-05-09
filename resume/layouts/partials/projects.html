@@ -1,28 +1,6 @@
 <section id="projects" class="pt-3">
-    <h4 class="section-heading">Open-Source Projects</h4>
-    {{ range sort . "order" }}
-    {{ $details := getJSON "https://api.github.com/repos/" .repo }}
-    <div class="item mb-3 print-page-break-avoid">
-        <div class="item-heading row align-items-center">
-            <h5 class="item-title col-12 mb-0">
-                <a href="{{ $details.html_url }}" class="text-dark" target="_blank">{{ .name }}</a>
-            </h5>
-            <span class="hidden d-print-block small">{{ $details.html_url }}</span>
-            <div class="col-12 col-md-6 col-lg-6 text-muted small">
-                {{ partial "_timerange.html" . }}
-            </div>
-        </div>
-        <div class="item-content">
-            <p class="small">{{ .description | markdownify }}</p>
-            <p>
-                <span class="badge rounded-pill bg-light text-dark border"><i class="far fa-fw fa-star"></i> {{ $details.stargazers_count | lang.FormatNumber 0 }}</span>
-                <span class="badge rounded-pill bg-light text-dark border"><i class="fas fa-fw fa-code-branch"></i> {{ $details.forks_count | lang.FormatNumber 0 }}</span>
-                <span class="badge rounded-pill bg-light text-dark border">{{ $details.language }}</span>
-                {{ range .keywords }}
-                <span class="badge rounded-pill bg-light text-dark border">{{ . }}</span>
-                {{ end }}
-            </p>
-        </div>
-    </div>
+    <h4 class="section-heading">{{ .title }}</h4>
+    {{ range sort .projects "order" }}
+    {{ partial "project_details.html" . }}
     {{ end }}
 </section>

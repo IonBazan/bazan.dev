@@ -1,0 +1,36 @@
+{{ $details := dict }}
+{{ if .repo }}
+    {{ $details = getJSON "https://api.github.com/repos/" .repo }}
+{{ end }}
+{{ with (merge $details .) }}
+<div class="item mb-3 print-page-break-avoid">
+    <div class="item-heading row align-items-center">
+        <h5 class="item-title col-12 mb-0">
+            {{ if .html_url }}
+            <a href="{{ .html_url }}" class="text-dark" target="_blank">{{ .name }}</a>
+            {{ else }}
+            {{ .name }}
+            {{ end }}
+        </h5>
+        {{ if .html_url }}
+        <span class="hidden d-print-block small">{{ .html_url }}</span>
+        {{ end }}
+        <div class="col-12 col-md-6 col-lg-6 text-muted small">
+            {{ partial "_timerange.html" . }}
+        </div>
+    </div>
+    <div class="item-content">
+        <p class="small">{{ .description | markdownify }}</p>
+        <p>
+            {{ if isset . "forks_count" }}
+            <span class="badge rounded-pill bg-light text-dark border"><i class="far fa-fw fa-star"></i> {{ .stargazers_count | lang.FormatNumber 0 }}</span>
+            <span class="badge rounded-pill bg-light text-dark border"><i class="fas fa-fw fa-code-branch"></i> {{ .forks_count | lang.FormatNumber 0 }}</span>
+            {{ end }}
+            <span class="badge rounded-pill bg-light text-dark border">{{ .language }}</span>
+            {{ range .keywords }}
+            <span class="badge rounded-pill bg-light text-dark border">{{ . }}</span>
+            {{ end }}
+        </p>
+    </div>
+</div>
+{{ end }}
