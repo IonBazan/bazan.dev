@@ -25,6 +25,11 @@ certificates:
     issuer: Amazon Web Services Training and Certification
     url: https://www.credly.com/badges/f88f8843-551c-4c29-88a9-511310621d5f
 
+  - name: Redis Certified Developer
+    date: 2024-05-14
+    issuer: Redis Training
+    url: https://www.credential.net/844d79ed-b56d-4732-85bf-3a57c21d4777
+
 languages:
   Polish: Native
   English: Advanced
