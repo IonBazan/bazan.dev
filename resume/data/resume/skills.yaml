@@ -18,6 +18,7 @@ backend:
   - name: React
     level: 60
 others:
+  - Redis
   - DevOps
   - Golang
   - Team Leading
