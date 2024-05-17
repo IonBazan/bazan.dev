@@ -1,20 +1,20 @@
 {{- define "main" -}}
-<main class="container">
-    <section class="text-center d-flex align-items-center justify-content-center min-vh-100 py-5 px-2">
+<main class="container" id="homepage">
+    <article class="text-center d-flex align-items-center justify-content-center min-vh-100 py-5 px-2">
         <div class="col-md-8">
             {{ with $.Site.Data.resume }}
-            <div class="main-avatar">
+            <header class="main-avatar">
                 <div class="mb-3 flex-shrink-0">
                     <img
                             class="profile-image rounded-circle shadow"
-                            src="{{ ((resources.Get "img/avatar.jpg").Process "resize 600x q100 webp").RelPermalink }}"
+                            src="{{ ((resources.Get "img/profile.jpeg").Process "resize 600x q100 webp").RelPermalink }}"
                     width="100%"
                     height="100%"
                     alt="{{ .name }}"
                     >
                 </div>
-            </div>
-            <div class="main-details">
+            </header>
+            <section class="main-details">
                 <h1 class="mb-0">{{ .name }}</h1>
                 <h2 class="mb-0 h4">{{ .position }}</h2>
                 {{ partial "socials.html" .contact }}
@@ -22,16 +22,16 @@
                     {{ $.Page.Content }}
                     {{ .summary | markdownify }}
                 </p>
-            </div>
+            </section>
             {{ end }}
-            <div class="main-links">
+            <footer class="main-links">
                 <nav class="nav justify-content-center">
                     {{- range .Site.Menus.footer }}
                         <a class="nav-link" href="{{ .URL }}">{{ .Name }}</a>
                     {{- end }}
                 </nav>
-            </div>
+            </footer>
         </div>
-    </section>
+    </article>
 </main>
 {{- end -}}

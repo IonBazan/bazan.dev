@@ -11,11 +11,14 @@
     <a href="https://github.com/{{ .github }}" class="nav-link link-body-emphasis px-2">
         <i class="fab fa-github fa-fw"></i>
     </a>
+    <a href="https://packagist.org/users/{{ .packagist }}" class="nav-link link-body-emphasis px-2">
+        <i class="fas fa-box fa-fw"></i>
+    </a>
     <a href="https://github.com/{{ .github }}.gpg" class="nav-link link-body-emphasis px-2">
         <i class="fas fa-fingerprint fa-fw"></i>
     </a>
-    <a href="https://packagist.org/users/{{ .packagist }}" class="nav-link link-body-emphasis px-2">
-        <i class="fas fa-box fa-fw"></i>
+    <a href="{{ "resume" | relURL }}" class="nav-link link-body-emphasis px-2">
+        <i class="far fa-id-card fa-fw"></i>
     </a>
     <a href="https://{{ .linkedin }}" class="nav-link link-body-emphasis px-2">
         <i class="fab fa-linkedin fa-fw"></i>

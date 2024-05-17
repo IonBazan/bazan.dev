@@ -8,7 +8,13 @@ $container-max-widths: (
 @import 'print/print';
 
 .profile-image {
-  max-width: 180px;
+  max-width: 200px;
+}
+
+#resume {
+  .profile-image {
+    max-width: 180px;
+  }
 }
 
 .timeline {
