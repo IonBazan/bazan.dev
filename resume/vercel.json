@@ -1,19 +1,16 @@
 {
-  "rewrites": [
+  "redirects": [
     {
       "source": "/",
+      "destination": "/index.txt",
+      "statusCode": 307,
       "has": [
         {
           "type": "header",
           "key": "User-Agent",
           "value": ".*(curl|wget|HTTPie|Postman).*"
         }
-      ],
-      "destination": "/raw.txt"
-    },
-    {
-      "source": "/",
-      "destination": "/resume.html"
+      ]
     }
   ]
 }

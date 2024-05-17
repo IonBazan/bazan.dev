@@ -2,13 +2,20 @@ baseURL: "https://bazan.dev/"
 relativeURLs: true
 languageCode: en
 timezone: "Asia/Singapore"
-title: 'Ion Bazan - Resume'
+title: 'Ion Bazan'
 disableKinds: [sitemap, RSS, taxonomy]
-outputFormats:
-  HTML:
-    baseName: resume
 build:
   writeStats: true
+outputFormats:
+  html:
+    mediaType: text/html
+  txt:
+    mediaType: text/plain
+    isPlainText: true
+    notAlternative: true
+outputs:
+  home: ["HTML", "TXT"]
+  page: ["HTML"]
 disableHugoGeneratorInject: true
 params:
   isoDateFormat: "2006-01-02T15:04:05Z07:00"

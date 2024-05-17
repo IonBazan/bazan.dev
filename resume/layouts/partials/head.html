@@ -1,5 +1,5 @@
 <meta charset="utf-8" />
-<title>{{ .Title }}</title>
+<title>{{ if ne .Title .Site.Title }}{{ .Title }} • {{ end }}{{ .Site.Title }}</title>
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="revised" content="{{ time.Now.Format $.Site.Params.isoDateFormat }}" />
 <meta name="description" content="{{ $.Site.Data.resume.summary }}">

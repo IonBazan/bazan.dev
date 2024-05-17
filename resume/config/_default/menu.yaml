@@ -1,0 +1,10 @@
+footer:
+  - name: Home
+    pageRef: /
+    weight: 10
+  - name: Blog
+    url: https://blog.bazan.dev/
+    weight: 20
+  - name: Resume
+    pageRef: /resume
+    weight: 20
