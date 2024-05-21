@@ -22,6 +22,9 @@ params:
   source: https://github.com/IonBazan/bazan.dev
 defaultContentLanguage: en
 defaultContentLanguageInSubdir: false
+services:
+  googleAnalytics:
+    ID: G-5ZGWNH0TXH
 module:
   mounts:
     - source: "./node_modules/@fortawesome/fontawesome-free/webfonts"
