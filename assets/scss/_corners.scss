@@ -4,7 +4,8 @@
  */
 .github-corner svg {
   clip-path: polygon(0 0, 100% 0, 100% 100%);
-  fill: $body-bg;
+  fill: white;
+  mix-blend-mode: darken;
 }
 
 .github-corner .corner {
