@@ -6,6 +6,8 @@ $container-max-widths: (
 );
 @import '../../node_modules/bootstrap/scss/bootstrap';
 @import 'print/print';
+@import 'corners';
+@import 'webfonts';
 
 .profile-image {
   max-width: 200px;

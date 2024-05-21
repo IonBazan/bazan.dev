@@ -1,5 +1,7 @@
-{{- define "main" -}}
+{{- define "header" -}}
 {{ partial "banner.html" . }}
+{{- end -}}
+{{- define "main" -}}
 {{ with $.Site.Data.resume }}
 <div class="container px-2 px-lg-5 px-print-0 mw-print-100">
     <article id="resume" class="mx-auto p-3 m-3 p-md-5 m-md-5 shadow-lg shadow-print-none m-print-0 p-print-2">

@@ -1,11 +1,14 @@
 <!DOCTYPE html>
 <html lang="{{ $.Site.LanguageCode }}" id="html">
 <head>
-    {{ partial "head" . }}
+    {{- partial "head" . }}
 </head>
 <body>
-    {{ block "main" . }}{{ end }}
-    {{ partial "footer" . }}
-    {{ partial "scripts" . }}
+    {{- block "header" . }}
+        {{ partial "corner" . }}
+    {{- end }}
+    {{- block "main" . }}{{- end }}
+    {{- partial "footer" . }}
+    {{- partial "scripts" . }}
 </body>
 </html>
