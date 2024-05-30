@@ -93,3 +93,9 @@ $container-max-widths: (
 .hidden {
   display: none;
 }
+
+.error-details {
+  h1 {
+    font-size: 16rem;
+  }
+}

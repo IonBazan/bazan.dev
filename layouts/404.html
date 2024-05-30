@@ -1,15 +1,11 @@
-{{ define "main" }}
-<main class="container" id="error-404">
-    <article class="text-center d-flex align-items-center justify-content-center min-vh-100 py-5 px-2">
-        <div class="col-md-8">
-            <h1>404 Not Found</h1>
-            <p>The page you requested cannot be found.</p>
-            <p>
-                <a href="{{ .Site.Home.RelPermalink }}">
-                    Return to the home page
-                </a>
-            </p>
-        </div>
-    </article>
-</main>
+{{ define "hero" }}
+    <section class="error-details">
+        <h1 class="fw-bolder">404</h1>
+        <p>The page you requested cannot be found.</p>
+    </section>
+    <footer class="error-links">
+        <nav class="nav justify-content-center">
+            <a class="nav-link" href="{{ .Site.Home.RelPermalink }}">Return to the home page</a>
+        </nav>
+    </footer>
 {{ end }}
