@@ -4,3 +4,4 @@ repo: doctrine/mongodb-odm
 keywords: [Doctrine, Symfony, MongoDB, ODM]
 description: Maintaining and contributing to Doctrine MongoDB ODM and Doctrine MongoDB Bundle for Symfony.
 order: 3
+packagist: https://packagist.org/packages/doctrine/mongodb-odm

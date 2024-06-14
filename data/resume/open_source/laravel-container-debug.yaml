@@ -4,3 +4,4 @@ repo: IonBazan/laravel-container-debug
 keywords: [Laravel, Debugging, Utilities]
 description: Lists available services in Laravel IoC Container.
 order: 1
+packagist: https://packagist.org/packages/ion-bazan/laravel-container-debug

@@ -4,3 +4,4 @@ repo: IonBazan/aliyun-http-signer
 keywords: [Guzzle, Symfony, PSR-7, Aliyun]
 description: PSR-7-compatible Alibaba Cloud API Gateway request signing implementation. Integrates with Guzzle ⛽️ and HttPlug 🐘.
 order: 2
+packagist: https://packagist.org/packages/ion-bazan/aliyun-http-signer

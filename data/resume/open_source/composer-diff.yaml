@@ -4,3 +4,4 @@ repo: IonBazan/composer-diff
 keywords: [Composer, Utilities, Mutation Testing]
 description: Compares composer.lock changes and generates Markdown report so you can use it in PR description.
 order: 0
+packagist: https://packagist.org/packages/ion-bazan/composer-diff

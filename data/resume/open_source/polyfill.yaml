@@ -4,3 +4,4 @@ repo: symfony/polyfill
 keywords: [Symfony, Portability]
 description: Various contributions to Symfony Polyfill library, allowing to write future-compatible code.
 order: 4
+packagist: https://packagist.org/packages/symfony/polyfill-php80
