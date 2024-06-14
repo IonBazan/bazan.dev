@@ -1,0 +1,7 @@
+{{- if ge . (mul 1000  1000) -}}
+    {{- (div . (mul 1000 1000)) | lang.FormatNumber 1 -}}M
+{{- else if ge . 1000 -}}
+    {{- (div . 1000) | lang.FormatNumber 1 -}}k
+{{- else -}}
+{{- . | lang.FormatNumber 0 -}}
+{{- end -}}
