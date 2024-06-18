@@ -1,0 +1,18 @@
+name: Trigger Vercel Build
+
+on:
+  schedule:
+    - cron: '0 8 * * 1'
+  workflow_dispatch:
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger Vercel deployment
+        env:
+          VERCEL_PROJECT_ID: QmarZcVo6Lps7sWz9mKuEaPDf9LTTuX38cVas4SjFZUGW4
+        run: |
+          curl -X POST https://api.vercel.com/v1/integrations/deploy/$VERCEL_PROJECT_ID \
+            --header "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}"
