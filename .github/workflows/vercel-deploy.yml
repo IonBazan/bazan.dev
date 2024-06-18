@@ -15,4 +15,6 @@ jobs:
           VERCEL_PROJECT_ID: QmarZcVo6Lps7sWz9mKuEaPDf9LTTuX38cVas4SjFZUGW4
         run: |
           curl -X POST https://api.vercel.com/v1/integrations/deploy/$VERCEL_PROJECT_ID \
-            --header "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}"
+            --header "Authorization: Bearer ${{ secrets.VERCEL_TOKEN }}" \
+            -H "Content-Type: application/json" \
+            -d '{"target":"production"}'
