@@ -26,6 +26,7 @@
     - Kubernetes
     - Git
     - CI/CD
+    - DataDog
 
 - name: Others
   skills:
