@@ -1,31 +1,35 @@
-backend:
-  - name: PHP 8
-    level: 99
-  - name: Symfony 7
-    level: 90
-  - name: Laravel
-    level: 70
-  - name: PostgreSQL
-    level: 70
-  - name: MySQL
-    level: 85
-  - name: MongoDB
-    level: 70
-  - name: AWS
-    level: 50
-  - name: TypeScript
-    level: 80
-  - name: React
-    level: 60
-others:
-  - Redis
-  - DevOps
-  - Golang
-  - Team Leading
-  - Code Review
-  - Docker
-  - Kubernetes
-  - Git
-  - Unit Testing
-  - Continuous Integration
-  - TDD
+- name: Programming languages
+  skills:
+    - Golang
+    - PHP
+    - TypeScript
+    - Node.js
+- name: Frameworks
+  skills:
+    - Gin
+    - Symfony
+    - Laravel
+    - React
+    - Vue
+
+- name: Databases
+  skills:
+    - PostgreSQL
+    - MySQL
+    - MongoDB
+    - Redis
+
+- name: Infrastructure
+  skills:
+    - AWS
+    - Docker
+    - Kubernetes
+    - Git
+    - CI/CD
+
+- name: Others
+  skills:
+    - TDD
+    - System Design
+    - Project Management
+    - Empowerment and Delegation

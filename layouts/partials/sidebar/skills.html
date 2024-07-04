@@ -1,18 +1,14 @@
 <section class="sidebar-section">
     <h4 class="section-heading">Skills & Tools</h4>
     <ul class="list-unstyled">
-        {{ range .backend }}
-        <li class="mb-2 small">
-            {{ .name }}
-            <div class="progress">
-                <div class="progress-bar bg-secondary"  role="progressbar" style="width: {{ .level }}%;" aria-valuenow="{{ .level }}" aria-valuemin="0" aria-valuemax="100" aria-label="{{ .level }}%"></div>
-            </div>
-        </li>
+        {{ range . }}
+        <li class="mb-2">
+            <div class="fw-bold">{{ .name }}:</div>
+            <ul>
+            {{ range .skills }}
+                <li>{{ . }}</li>
+            {{ end }}
+            </ul>
         {{ end }}
     </ul>
-    <div class="mb-4">
-        {{ range .others }}
-        <span class="badge rounded-pill bg-secondary border border-dark">{{ . }}</span>
-        {{ end }}
-    </div>
 </section>
