@@ -13,4 +13,4 @@ description: |
   Leading a seamless user data migration and cross-system authentication mechanism for a new product launch.\
   Supporting company hiring needs by conducting interviews and reviewing code challenges for potential candidates.
 website: https://aspireapp.com/
-technologies: [PHP 8, Microservices, Golang, Vue, AWS, Docker, TypeScript, Laravel]
+technologies: [Golang, Gin, PHP 8, Hiring, Microservices, Datadog, Vue, AWS, Docker, TypeScript, Laravel]

@@ -9,6 +9,7 @@
     - Gin
     - Symfony
     - Laravel
+    - NestJS
     - React
     - Vue
 
@@ -30,6 +31,9 @@
 
 - name: Others
   skills:
+    - Hiring
+    - Mentoring
+    - Observability tools
     - TDD
     - System Design
     - Project Management

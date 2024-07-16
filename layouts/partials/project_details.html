@@ -24,7 +24,7 @@
         </div>
     </div>
     <div class="item-content">
-        <p class="small">{{ .description | markdownify }}</p>
+        <p class="small mb-1">{{ .description | markdownify }}</p>
         <p>
             {{ if isset . "forks_count" }}
             <span class="badge rounded-pill bg-light text-dark border"><i class="far fa-fw fa-star"></i> {{ partial "_human_number.html" .stargazers_count }}</span>
