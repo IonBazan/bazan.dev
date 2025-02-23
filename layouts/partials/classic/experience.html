@@ -1,0 +1,28 @@
+<section id="experience" class="mb-4">
+    <h4 class="section-heading">Work Experience</h4>
+    <div class="ms-2">
+        {{ range sort . "start" "desc" }}
+        <div class="item mb-4 position-relative print-page-break-avoid">
+            <div class="row align-items-center mb-2">
+                <h5 class="mb-0 col-12">
+                    {{ .position }}
+                </h5>
+                <div class="col-md-6 text-muted">
+                   {{ .company }} • {{ .country }}
+                </div>
+                <div class="col-md-6 text-muted text-end">
+                    {{ partial "_timerange.html" . }}
+                </div>
+            </div>
+            <p class="mb-2">{{ .description | markdownify }}</p>
+            {{ if .technologies }}
+            <p>
+                {{ range .technologies }}
+                <span class="badge rounded-pill bg-light text-dark border">{{ . }}</span>
+                {{ end }}
+            </p>
+            {{ end }}
+        </div>
+        {{ end }}
+    </div>
+</section>

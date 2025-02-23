@@ -4,13 +4,13 @@ position: Tech Lead / Associate Architect
 start: 2022-11-15
 end: ~
 description: |
-  Architecting an all-encompassing finance operating system tailored for the APAC region.\
-  Spearheading infrastructure enhancements, including the transition to Docker containers, to bolster scalability and observability across our distributed application.\
-  Initiating and driving platform-wide optimizations while enhancing developer experience through bespoke tools and reusable components.\
-  Streamlining our CI pipeline by optimizing existing processes, transitioning to GitHub self-hosted runners to minimize infrastructure costs, and implementing code metrics to monitor progress.\
-  Tackling ongoing application issues pertinent to the Payments and Spend teams by conducting root cause analysis and implementing long-term solutions.\
-  Implementing an automatic OCR processing feature for incoming email messages attachments, reducing manual processing time by 90%.\
-  Leading a seamless user data migration and cross-system authentication mechanism for a new product launch.\
-  Supporting company hiring needs by conducting interviews and reviewing code challenges for potential candidates.
+  - Leading the transition to a **Golang based microservices architecture** to improve scalability and maintainability, architecting **Payment Orchestrator** and **Payout Service**.
+  - Maintaining existing application infrastructure and **architecting new features** to fulfill business requirements.
+  - Reducing CI/CD pipeline **execution time by 30%** by optimizing build processes, parallel testing ang self-hosted runners.
+  - Integrating with multiple payment providers, banks and external services, including **Wise, Currency Cloud, DBS**, to support Aspire's global expansion.
+  - Continous monitoring and improving application performance. Refactoring existing core features, **achieving up to 20x** faster processing times.
+  - Spearheading infrastructure enhancements, including the transition to Docker containers, improving scalability and observability across our distributed application using **OpenTelemetry and Grafana**.
+  - Supporting company hiring needs by **conducting interviews** and reviewing code challenges for candidates.
+  - Ensuring platform security by implementing **OWASP** best practices, conducting regular security audits and introducing automated dependency upgrades.
 website: https://aspireapp.com/
-technologies: [Golang, Gin, PHP 8, Hiring, Microservices, Datadog, Vue, AWS, Docker, TypeScript, Laravel]
+technologies: [Golang, Gin, PHP 8, Redis, Hiring, Microservices, Datadog, Vue, AWS, Docker, TypeScript, Laravel]

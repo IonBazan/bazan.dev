@@ -1,4 +1,4 @@
-name: Alibaba Cloud API Gateway HTTP Request Signer for PHP
+name: Aliyun HTTP Request Signer
 start: 2020-04-28
 repo: IonBazan/aliyun-http-signer
 keywords: [Guzzle, Symfony, PSR-7, Aliyun]

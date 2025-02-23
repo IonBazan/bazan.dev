@@ -3,6 +3,8 @@ country: Poland
 position: Software Developer
 start: 2018-07-01
 end: 2019-06-30
-description: Developing an event platform and splitting it to microservices. Creating POS API based on Symfony 4 and frontend app on top of Raspberry Pi 3 using Electron and React with BOCA thermal printer.
+description: |
+  - Developing an event platform and splitting it to microservices. 
+  - Designing and building a POS API based on Symfony 4 and frontend app on top of Raspberry Pi 3 using Electron and React with BOCA thermal printer.
 website: https://goingapp.pl/
 technologies: [PHP, JavaScript, Laravel, Symfony 4, MySQL, Docker, React, Electron, Raspberry Pi, NodeJS, Thermal Printers]

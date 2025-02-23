@@ -1,4 +1,4 @@
 ---
 title: Resume
-layout: "resume"
+layout: "resume-classic"
 ---

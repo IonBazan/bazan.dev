@@ -1,0 +1,15 @@
+<section class="print-page-break-avoid">
+    <h4 class="section-heading">Certificates</h4>
+    <ul class="list-unstyled ms-2">
+        {{ range sort . "date" "desc" }}
+        <li class="row mb-2">
+            <div class="fw-bold col-sm-6">
+                <a href="{{ .url }}" class="text-dark" target="_blank">{{ .name }}</a>
+            </div>
+            <div class="col-sm-6 text-sm-end">
+            <div class="text-muted"><small class="text-muted"><time datetime="{{ time.Format "2006-01-02" .date }}">{{ time.Format "2 January 2006" .date }}</time></small></div>
+            </div>
+        </li>
+        {{ end }}
+    </ul>
+</section>
