@@ -1,0 +1,37 @@
+{{- define "header" -}}
+{{ partial "banner" . }}
+{{- end -}}
+{{- define "main" -}}
+{{ with $.Site.Data.resume }}
+<div class="container px-2 px-lg-5 px-print-0 mw-print-100">
+    <article id="resume" class="mx-auto p-3 m-3 p-md-5 m-md-5 shadow-lg shadow-print-none m-print-0 p-print-2">
+        {{ partial "classic/header.html" . }}
+        <hr>
+        <div class="py-2">
+            <p class="mb-0">
+                {{ .summary | markdownify }}
+            </p>
+        </div>
+        <hr>
+        <div id="resume-body">
+            <div class="row">
+                <div class="col-12">
+                    {{ partial "classic/skills.html" .skills }}
+                    {{ partial "classic/education.html" .education }}
+                    {{ partial "classic/experience.html" .experience }}
+                    {{ partial "classic/certificates.html" .certificates }}
+
+                    {{ if .projects }}
+                    {{ partial "classic/projects.html" (dict "title" "Projects" "projects" .projects)}}
+                    {{ end }}
+
+                    {{ if .open_source }}
+                    {{ partial "classic/projects.html" (dict "title" "Open-Source Projects" "projects" .open_source) }}
+                    {{ end }}
+                </div>
+            </div>
+        </div>
+    </article>
+</div>
+{{ end }}
+{{- end -}}

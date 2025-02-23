@@ -1,0 +1,7 @@
+<time itemprop="startDate" datetime="{{ time.Format "2006-01-02" .start }}">{{ time.Format "January 2006" .start }}</time>
+-
+{{ if .end }}
+<time itemprop="endDate" datetime="{{ time.Format "2006-01-02" .end }}">{{ time.Format "January 2006" .end }}</time>
+{{ else }}
+Present
+{{ end }}
