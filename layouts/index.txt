@@ -3,7 +3,7 @@
    │                                                             │
    │         Hi, my name is Ion Bazan.                           │
    │                                                             │
-   │      👨🏻‍💻 Associate Software Architect at Aspire              │
+   │      👨🏻‍💻 Software Architect @ Aspire                         │
    │      📧 ion.bazan@gmail.com                                 │
    │      📍 Singapore                                           │
    │                                                             │
