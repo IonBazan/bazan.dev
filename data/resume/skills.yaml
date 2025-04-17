@@ -3,9 +3,10 @@
     - Golang
     - PHP
     - TypeScript
-    - Node.js
+    - Java
 - name: Frameworks
   skills:
+    - GoFr
     - Gin
     - Symfony
     - Laravel
