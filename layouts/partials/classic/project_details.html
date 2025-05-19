@@ -7,7 +7,7 @@
     {{ $details = merge $details $packagistDetails }}
 {{ end }}
 {{ with (merge $details .) }}
-<div class="item mb-3 print-page-break-avoid {{ if .html_url }} col-sm-6 {{ end }}">
+<div class="item mb-0 print-page-break-avoid {{ if .html_url }} col-sm-6 {{ end }}">
     <div class="item-heading row align-items-center">
         <h5 class="item-title col-12 mb-0">
             {{ if .html_url }}
@@ -28,7 +28,6 @@
         <p>
             {{ if isset . "forks_count" }}
             <span class="badge rounded-pill bg-light text-dark border"><i class="far fa-fw fa-star"></i> {{ partial "_human_number.html" .stargazers_count }}</span>
-            <span class="badge rounded-pill bg-light text-dark border"><i class="fas fa-fw fa-code-branch"></i> {{ partial "_human_number.html" .forks_count }}</span>
             {{ end }}
             {{ if isset . "package" }}
             <span class="badge rounded-pill bg-light text-dark border"><i class="fas fa-fw fa-download"></i> {{ partial "_human_number.html" .package.downloads.total }}</span>

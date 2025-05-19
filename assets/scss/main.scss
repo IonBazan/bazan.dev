@@ -4,6 +4,7 @@ $container-max-widths: (
         lg: 960px,
         xl: 1140px
 );
+$font-size-base: 0.85rem;
 @import '../../node_modules/bootstrap/scss/bootstrap';
 @import 'print/print';
 @import 'corners';
@@ -49,7 +50,7 @@ $container-max-widths: (
 .section-heading {
   position: relative;
   padding-left: 1rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.5rem;
   text-transform: uppercase;
 
   &::before {

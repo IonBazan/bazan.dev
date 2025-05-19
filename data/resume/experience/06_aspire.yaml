@@ -11,6 +11,6 @@ description: |
   - Continous monitoring and improving application performance. Refactoring existing core features, **achieving up to 20x** faster processing times.
   - Spearheading infrastructure enhancements, including the transition to Docker containers, improving scalability and observability across our distributed application using **OpenTelemetry and Grafana**.
   - Supporting company hiring needs by **conducting interviews** and reviewing code challenges for candidates.
-  - Ensuring platform security by implementing **OWASP** best practices, conducting regular security audits and introducing automated dependency upgrades.
+  - Ensuring platform security by implementing **OWASP** best practices, conducting regular security audits and investigating security incidents.
 website: https://aspireapp.com/
-technologies: [Golang, Gin, PHP 8, Redis, Hiring, Microservices, Datadog, Vue, AWS, Docker, TypeScript, Laravel]
+technologies: [Golang, Gin, PHP 8, Redis, Security, Hiring, Microservices, Datadog, Vue, AWS, Docker, TypeScript, Laravel]
