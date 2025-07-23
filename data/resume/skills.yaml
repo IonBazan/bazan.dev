@@ -1,6 +1,6 @@
 - name: Programming languages
   skills:
-    - Golang
+    - Go
     - PHP
     - TypeScript
     - Java
@@ -33,6 +33,7 @@
 - name: Others
   skills:
     - Hiring
+    - Agile methodologies
     - Mentoring
     - Observability tools
     - TDD

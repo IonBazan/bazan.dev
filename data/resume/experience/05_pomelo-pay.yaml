@@ -5,9 +5,9 @@ start: 2021-05-01
 end: 2022-11-14
 description: |
   - Leading and mentoring a team of 5 engineers in several projects, enforcing best practices, conducting code reviews, and providing guidance to developers, elevating the banking experience for financial institutions with **serverless environment**.
-  - **Defining OKRs and KPIs**, and ensuring the team's alignment with the company's goals, improving the team's productivity by **20%**. 
+  - **Defining OKRs and KPIs**, and ensuring the team's alignment with the company's goals, improving the team's productivity by **20%**.
   - Reducing the time to market for internal dashboard features by creating a **custom framework** and reusable components, integrating with **MongoDB** and **AWS** services.
-  - Scaling up the team by hiring and onboarding new engineers, conducting interviews for in-house, remote and offshore positions.
+  - Rapidly scaled up the team by hiring and onboarding new engineers, conducting interviews for in-house, remote and offshore positions.
   - Improving **CircleCI pipelines**, delivering better developer experience, including flaky test reporting and parallel testing.
   - Implementing **AWS ECS** and serverless infrastructure using **CloudFormation** templates to deliver a scalable and cost-effective solution.
   - Developing a sense of ownership and discipline among fellow employees, and creating a culture of knowledge sharing by conducting multiple sessions on various topics.
