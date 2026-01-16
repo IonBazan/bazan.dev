@@ -2,7 +2,7 @@ company: Aspire
 country: Singapore
 position: Tech Lead / Software Architect (Payments)
 start: 2022-11-15
-end: ~
+end: 2025-10-15
 description: |
   - Leading the transition to a **Golang based microservices architecture** to improve scalability and maintainability, architecting **Payment Orchestrator** and **Payout Service**.
   - Maintaining strategic application infrastructure and **architecting new features** to fulfill business objectives.

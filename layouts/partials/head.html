@@ -6,5 +6,23 @@
 <meta property="og:image" content="{{ ((resources.Get "img/profile.jpeg").Resize "600x q100 webp").RelPermalink }}">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="icon" sizes="any" href="{{"favicon.ico" | relURL}}">
-<link rel="stylesheet" href="{{ (resources.Get "scss/main.scss" | toCSS (dict "targetPath" "style.css") | postCSS | minify | fingerprint).RelPermalink }}">
+{{ with resources.Get "scss/main.scss" }}
+    {{ $opts := dict
+    "enableSourceMap" hugo.IsDevelopment
+    "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
+    "targetPath" "css/main.css"
+    "transpiler" "dartsass"
+    "vars" site.Params.styles
+    "includePaths" (slice "node_modules/bootstrap/scss")
+    }}
+    {{ with . | toCSS $opts | postCSS | minify | fingerprint }}
+        {{ if hugo.IsDevelopment }}
+            <link rel="stylesheet" href="{{ .RelPermalink }}">
+        {{ else }}
+            {{ with . | fingerprint }}
+                <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
+            {{ end }}
+        {{ end }}
+    {{ end }}
+{{ end }}
 {{- template "_internal/google_analytics.html" . -}}

@@ -1,10 +1,4 @@
-$container-max-widths: (
-        sm: 540px,
-        md: 720px,
-        lg: 960px,
-        xl: 1140px
-);
-$font-size-base: 0.85rem;
+@import 'variables';
 @import '../../node_modules/bootstrap/scss/bootstrap';
 @import 'print/print';
 @import 'corners';

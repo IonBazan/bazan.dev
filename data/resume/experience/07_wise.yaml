@@ -1,0 +1,8 @@
+company: Wise
+country: Singapore
+position: Software Engineer
+start: 2025-11-10
+end: ~
+description:
+website: https://wise.com/
+technologies: [Java, Spring Boot, Kotlin, Microservices, Docker, AWS]
