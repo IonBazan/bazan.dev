@@ -8,21 +8,18 @@
 <link rel="icon" sizes="any" href="{{"favicon.ico" | relURL}}">
 {{ with resources.Get "scss/main.scss" }}
     {{ $opts := dict
-    "enableSourceMap" hugo.IsDevelopment
-    "outputStyle" (cond hugo.IsDevelopment "expanded" "compressed")
     "targetPath" "css/main.css"
     "transpiler" "dartsass"
     "vars" site.Params.styles
-    "includePaths" (slice "node_modules/bootstrap/scss")
     }}
-    {{ with . | toCSS $opts | postCSS | minify | fingerprint }}
-        {{ if hugo.IsDevelopment }}
-            <link rel="stylesheet" href="{{ .RelPermalink }}">
-        {{ else }}
-            {{ with . | fingerprint }}
-                <link rel="stylesheet" href="{{ .RelPermalink }}" integrity="{{ .Data.Integrity }}" crossorigin="anonymous">
-            {{ end }}
-        {{ end }}
+    {{ with . | toCSS $opts | postCSS | minify | fingerprint | resources.PostProcess  }}
+        <link
+            rel="stylesheet"
+            href="{{ .RelPermalink }}"
+            {{ if hugo.IsProduction -}}
+            integrity="{{ .Data.Integrity }}"
+            {{- end }}
+        />
     {{ end }}
 {{ end }}
 {{- template "_internal/google_analytics.html" . -}}

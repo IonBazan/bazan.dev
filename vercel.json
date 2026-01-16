@@ -1,4 +1,11 @@
 {
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "outputDirectory": "public",
+  "buildCommand": "./build.sh",
+  "env": {
+    "HUGO_VERSION": "0.154.5",
+    "DART_SASS_VERSION": "1.97.2"
+  },
   "redirects": [
     {
       "source": "/",
