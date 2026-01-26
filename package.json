@@ -6,7 +6,7 @@
     "bootstrap": "^5.3.8"
   },
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^7.0.2",
+    "@fullhuman/postcss-purgecss": "^8.0.0",
     "postcss": "^8.5.6",
     "postcss-cli": "^11.0.0",
     "sass": "^1.97.2"
