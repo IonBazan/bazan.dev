@@ -1,6 +1,6 @@
 baseURL: "https://bazan.dev/"
 relativeURLs: true
-languageCode: en
+locale: en
 timezone: "Asia/Singapore"
 title: 'Ion Bazan'
 disableKinds: [sitemap, RSS, taxonomy]
