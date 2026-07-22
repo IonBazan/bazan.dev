@@ -8,7 +8,7 @@
        rather than a rune count of the emoji itself. */ -}}
 {{- $emojiWidth := 2 -}}
 {{- $baseIndent := 6 -}}
-{{- $rightBuffer := 4 -}}
+{{- $rightBuffer := 8 -}}
 {{- $textColumn := add $baseIndent (add $emojiWidth 1) -}}
 {{- $margin := "   " -}}
 

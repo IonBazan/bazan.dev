@@ -39,6 +39,29 @@ build.sh          Vercel build script (installs a pinned Dart Sass, then `hugo -
 **To edit resume content** (jobs, skills, projects, education, certificates), edit the YAML files
 under `data/resume/` — never hardcode content into templates.
 
+Every file under `data/` has a matching JSON Schema in `schemas/`, wired up via a
+`# yaml-language-server: $schema=...` comment on the file's first line (works in VSCode with the
+`redhat.vscode-yaml` extension — recommended in `.vscode/extensions.json` — and in recent
+JetBrains IDEs automatically). `.vscode/settings.json` also glob-maps whole directories
+(`data/resume/experience/*.yaml`, etc.) as a fallback that covers new files without needing the
+comment. If you add or rename a field in a data file, **update the matching schema in `schemas/`
+in the same change** — a schema that lies about the shape of the data is worse than no schema.
+`data/resume/projects/*.yaml` and `data/resume/open_source/*.yaml` intentionally share one schema
+(`project-item.schema.json`), since both are rendered through the same partial. Note:
+`data/resume.yaml`'s `languages:` block and `data/resume/languages.yaml` are duplicates of each
+other — pre-existing, not introduced by the schemas; keep both in sync if you change either.
+
+## Structured data
+
+`layouts/partials/structured-data.html` emits a `schema.org/Person` JSON-LD block (included from
+`head.html`, so it's on every page) built from `hugo.Data.resume` — no hardcoded content. If you
+add/rename a field it reads (`contact.*`, `education`, `skills`, `experience`, `languages`), keep
+this partial in sync the same way you'd keep a `schemas/*.json` file in sync. Note the
+`jsonify | safeJS` at the end: Go's `html/template` doesn't recognize `application/ld+json` as a
+non-JS script type, so without `safeJS` the whole JSON blob gets double-escaped as an untrusted JS
+string — don't drop it. `worksFor` is derived from whichever `experience/*.yaml` entry has
+`end: ~` (the current role).
+
 ## Two resume layouts — keep them in mind
 
 `content/resume/index.md` sets `layout: "resume-classic"`, so **`resume-classic.html` and

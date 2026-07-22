@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=../../../schemas/project-item.schema.json
 name: Laravel Container Debug
 start: 2020-07-16
 repo: IonBazan/laravel-container-debug

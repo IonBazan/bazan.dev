@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=../../schemas/contact.schema.json
 phone: +65 9447 2174
 email: ion.bazan@gmail.com
 location: Singapore

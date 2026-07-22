@@ -1,3 +1,4 @@
+# yaml-language-server: $schema=../../../schemas/project-item.schema.json
 name: Symfony Polyfill
 start: 2018-08-05
 repo: symfony/polyfill

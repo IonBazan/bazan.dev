@@ -1,0 +1,55 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Resume root data",
+  "description": "data/resume.yaml — top-level resume fields exposed to templates as hugo.Data.resume.*",
+  "type": "object",
+  "required": ["name", "position", "summary", "education"],
+  "additionalProperties": false,
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "Full name, shown as the page <h1>."
+    },
+    "position": {
+      "type": "string",
+      "description": "Job title / tagline shown under the name."
+    },
+    "summary": {
+      "type": "string",
+      "description": "Markdown supported (rendered with markdownify). Use a YAML block scalar (|) with a trailing backslash on each line to keep paragraphs separate without extra blank lines."
+    },
+    "education": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["degree", "start", "university"],
+        "additionalProperties": false,
+        "properties": {
+          "degree": { "type": "string" },
+          "start": {
+            "description": "Start date, unquoted YYYY-MM-DD (e.g. 2012-10-01)."
+          },
+          "end": {
+            "description": "End date, unquoted YYYY-MM-DD. Omit or use ~ if ongoing."
+          },
+          "university": { "type": "string" },
+          "location": { "type": "string" },
+          "url": {
+            "type": "string",
+            "format": "uri",
+            "description": "University website."
+          }
+        }
+      }
+    },
+    "languages": {
+      "type": "object",
+      "description": "Map of language name to proficiency level. NOTE: this duplicates data/resume/languages.yaml — keep both in sync, or consolidate to one source.",
+      "additionalProperties": { "type": "string" }
+    },
+    "interests": {
+      "type": "array",
+      "items": { "type": "string" }
+    }
+  }
+}

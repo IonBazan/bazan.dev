@@ -1,0 +1,20 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Contact details",
+  "description": "data/resume/contact.yaml — used by the header/socials partials.",
+  "type": "object",
+  "required": ["phone", "email", "location", "website", "github", "linkedin"],
+  "additionalProperties": false,
+  "properties": {
+    "phone": { "type": "string", "description": "E.164-ish phone number, e.g. +65 9447 2174." },
+    "email": { "type": "string", "format": "email" },
+    "location": { "type": "string", "description": "City, shown as-is." },
+    "website": { "type": "string", "description": "Domain without protocol, e.g. bazan.dev." },
+    "github": { "type": "string", "description": "GitHub username (no @, no URL)." },
+    "linkedin": { "type": "string", "description": "linkedin.com/in/... path, without protocol." },
+    "packagist": { "type": "string", "description": "Packagist username." },
+    "dev_to": { "type": "string", "description": "dev.to username." },
+    "stack_overflow": { "type": ["string", "integer"], "description": "Stack Overflow numeric user id (commonly written unquoted, e.g. 851538)." },
+    "credly": { "type": "string", "format": "uri", "description": "Full Credly badges profile URL." }
+  }
+}

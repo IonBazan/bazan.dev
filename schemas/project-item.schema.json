@@ -1,0 +1,39 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Project / open-source entry",
+  "description": "data/resume/projects/*.yaml and data/resume/open_source/*.yaml — one file per item, both rendered through the same project_details partial. If `repo` is set, star/fork counts are fetched from the GitHub API at build time; if `packagist` is set, download counts are fetched from Packagist.",
+  "type": "object",
+  "required": ["name", "start", "description", "order"],
+  "additionalProperties": false,
+  "properties": {
+    "name": { "type": "string" },
+    "start": { "description": "Start date, unquoted YYYY-MM-DD (e.g. 2020-06-22)." },
+    "end": { "description": "End date, unquoted YYYY-MM-DD. Omit if ongoing." },
+    "language": {
+      "type": "string",
+      "description": "Primary language, shown as a badge. Typically used for standalone projects rather than open-source packages."
+    },
+    "repo": {
+      "type": "string",
+      "description": "GitHub \"owner/repo\" slug, e.g. IonBazan/composer-diff. Also makes the item link to the repo and shows star/fork badges."
+    },
+    "packagist": {
+      "type": "string",
+      "format": "uri",
+      "description": "Full Packagist package URL, e.g. https://packagist.org/packages/ion-bazan/composer-diff. Adds a download-count badge (fetched from <url>.json)."
+    },
+    "keywords": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Shown as badges alongside language/star/download counts."
+    },
+    "description": {
+      "type": "string",
+      "description": "Markdown supported."
+    },
+    "order": {
+      "type": "integer",
+      "description": "Sort order within the section, ascending."
+    }
+  }
+}

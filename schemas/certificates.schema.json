@@ -1,0 +1,17 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Certificates",
+  "description": "data/resume/certificates.yaml — list of certifications, sorted by date desc at render time.",
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": ["name", "date", "issuer", "url"],
+    "additionalProperties": false,
+    "properties": {
+      "name": { "type": "string" },
+      "date": { "description": "Issue date, unquoted YYYY-MM-DD (e.g. 2024-05-31)." },
+      "issuer": { "type": "string" },
+      "url": { "type": "string", "format": "uri", "description": "Link to the credential/badge." }
+    }
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "title": "Work experience entry",
+  "description": "data/resume/experience/*.yaml — one file per role, one role per file. File names are prefixed NN_ for sort order on disk, but templates sort by `start` desc regardless.",
+  "type": "object",
+  "required": ["company", "country", "position", "start", "end", "website", "technologies"],
+  "additionalProperties": false,
+  "properties": {
+    "company": { "type": "string" },
+    "country": { "type": "string" },
+    "position": { "type": "string" },
+    "start": { "description": "Start date, unquoted YYYY-MM-DD (e.g. 2022-11-15)." },
+    "end": { "description": "End date, unquoted YYYY-MM-DD. Use ~ (null) for the current role — renders as \"Present\"." },
+    "description": {
+      "type": ["string", "null"],
+      "description": "Markdown supported (bold **text**, bullet lists with '- '). Use ~ or leave empty for no description."
+    },
+    "website": { "type": "string", "format": "uri" },
+    "technologies": {
+      "type": "array",
+      "items": { "type": "string" },
+      "description": "Shown as badges under the description."
+    }
+  }
+}

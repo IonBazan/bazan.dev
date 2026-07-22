@@ -1,0 +1,49 @@
+{{- $pageURL := .Permalink -}}
+{{- with hugo.Data.resume -}}
+{{- $contact := .contact -}}
+{{- $sameAs := slice
+    (printf "https://%s" $contact.website)
+    (printf "https://github.com/%s" $contact.github)
+    (printf "https://%s" $contact.linkedin)
+    (printf "https://packagist.org/users/%s" $contact.packagist)
+    (printf "https://stackoverflow.com/users/%v" $contact.stack_overflow)
+    (printf "https://dev.to/%s" $contact.dev_to)
+    $contact.credly
+-}}
+{{- $alumniOf := slice -}}
+{{- range .education -}}
+    {{- $alumniOf = $alumniOf | append (dict "@type" "EducationalOrganization" "name" .university "url" .url) -}}
+{{- end -}}
+{{- $knowsAbout := slice -}}
+{{- range .skills -}}
+    {{- range .skills -}}
+        {{- $knowsAbout = $knowsAbout | append . -}}
+    {{- end -}}
+{{- end -}}
+{{- $knowsLanguage := slice -}}
+{{- range $lang, $level := .languages -}}
+    {{- $knowsLanguage = $knowsLanguage | append $lang -}}
+{{- end -}}
+{{- $person := dict
+    "@context" "https://schema.org"
+    "@type" "Person"
+    "name" .name
+    "jobTitle" .position
+    "description" (.summary | markdownify | plainify | htmlUnescape)
+    "url" $pageURL
+    "image" ((resources.Get "img/profile.jpeg").Process "resize 600x q100 webp").RelPermalink
+    "email" (printf "mailto:%s" $contact.email)
+    "telephone" $contact.phone
+    "address" $contact.location
+    "sameAs" $sameAs
+    "alumniOf" $alumniOf
+    "knowsAbout" $knowsAbout
+    "knowsLanguage" $knowsLanguage
+-}}
+{{- range .experience -}}
+    {{- if not .end -}}
+        {{- $person = merge $person (dict "worksFor" (dict "@type" "Organization" "name" .company "url" .website)) -}}
+    {{- end -}}
+{{- end -}}
+<script type="application/ld+json">{{ $person | jsonify | safeJS }}</script>
+{{- end -}}
