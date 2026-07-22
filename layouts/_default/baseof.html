@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="{{ $.Site.Language.Locale }}" id="html">
+<html lang="{{ $.Site.Language.Locale }}" id="html" data-theme="light">
 <head>
     {{- partial "head" . }}
 </head>
@@ -9,11 +9,13 @@
     {{- end }}
     {{- block "main" . }}
     <main class="container" id="hero-main">
-        <article class="text-center d-flex align-items-center justify-content-center min-vh-100 py-5 px-2">
-            <div class="col-md-9">
-                {{- block "hero" . }}
-                    {{- partial "hero" . }}
-                {{- end }}
+        <article class="has-text-centered is-flex is-align-items-center is-justify-content-center min-vh-100 py-5 px-2">
+            <div class="columns is-centered is-flex-grow-1">
+                <div class="column is-9">
+                    {{- block "hero" . }}
+                        {{- partial "hero" . }}
+                    {{- end }}
+                </div>
             </div>
         </article>
     </main>

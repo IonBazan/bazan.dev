@@ -1,16 +1,16 @@
-<section id="experience" class="mb-4">
+<section id="experience">
     <h4 class="section-heading">Work Experience</h4>
-    <div class="ms-2">
+    <div class="ml-2">
         {{ range sort . "start" "desc" }}
-        <div class="item position-relative print-page-break-avoid">
-            <div class="row align-items-center mb-2">
-                <h5 class="mb-0 col-12">
+        <div class="item is-relative print-page-break-avoid">
+            <div class="columns is-multiline is-vcentered mb-2">
+                <h5 class="mb-0 column is-12">
                     {{ .position }}
                 </h5>
-                <div class="col-md-6 text-muted">
+                <div class="column is-6 has-text-grey">
                    {{ .company }} • {{ .country }}
                 </div>
-                <div class="col-md-6 text-muted text-end">
+                <div class="column is-6 has-text-grey has-text-right">
                     {{ partial "_timerange.html" . }}
                 </div>
             </div>
@@ -18,7 +18,7 @@
             {{ if .technologies }}
             <p>
                 {{ range .technologies }}
-                <span class="badge rounded-pill bg-light text-dark border">{{ . }}</span>
+                <span class="tag is-rounded">{{ . }}</span>
                 {{ end }}
             </p>
             {{ end }}

@@ -1,24 +1,24 @@
 <section id="experience">
     <h4 class="section-heading">Work Experience</h4>
-    <div class="timeline position-relative ps-4">
+    <div class="timeline is-relative pl-4">
         {{ range sort . "start" "desc" }}
-        <div class="item mb-4 position-relative print-page-break-avoid">
-            <div class="row align-items-center mb-2">
-                <h5 class="col-12 col-sm-8 col-lg-8 mb-0 mb-md-0">
+        <div class="item mb-4 is-relative print-page-break-avoid">
+            <div class="columns is-vcentered mb-2">
+                <h5 class="column is-8 mb-0">
                     {{ .position }}
                 </h5>
-                <div class="col-12 col-sm-4 col-lg-4 text-muted text-start text-sm-end small">
-                    <a class="text-dark" href="{{ .website }}" target="_blank" rel="noreferrer">{{ .company }} [{{ .country }}]</a>
+                <div class="column is-4 has-text-grey has-text-left has-text-right-tablet is-size-7">
+                    <a class="has-text-dark" href="{{ .website }}" target="_blank" rel="noreferrer">{{ .company }} [{{ .country }}]</a>
                 </div>
-                <div class="col-12 text-muted text-start small">
+                <div class="column is-12 has-text-grey has-text-left is-size-7">
                     {{ partial "_timerange.html" . }}
                 </div>
             </div>
-            <p class="mb-2 small">{{ .description | markdownify }}</p>
+            <p class="mb-2 is-size-7">{{ .description | markdownify }}</p>
             {{ if .technologies }}
             <p>
                 {{ range .technologies }}
-                <span class="badge rounded-pill bg-light text-dark border">{{ . }}</span>
+                <span class="tag is-rounded">{{ . }}</span>
                 {{ end }}
             </p>
             {{ end }}

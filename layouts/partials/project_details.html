@@ -7,35 +7,35 @@
     {{ $details = merge $details $packagistDetails }}
 {{ end }}
 {{ with (merge $details .) }}
-<div class="item mb-3 print-page-break-avoid {{ if .html_url }} col-sm-6 {{ end }}">
-    <div class="item-heading row align-items-center">
-        <h5 class="item-title col-12 mb-0">
+<div class="item column mb-3 print-page-break-avoid {{ if .html_url }}is-6{{ else }}is-12{{ end }}">
+    <div class="item-heading">
+        <h5 class="item-title mb-0">
             {{ if .html_url }}
-            <a href="{{ .html_url }}" class="text-dark" target="_blank">{{ .name }}</a>
+            <a href="{{ .html_url }}" class="has-text-dark" target="_blank">{{ .name }}</a>
             {{ else }}
             {{ .name }}
             {{ end }}
         </h5>
         {{ if .html_url }}
-        <span class="hidden d-print-block small">{{ .html_url }}</span>
+        <span class="hidden d-print-block is-size-7">{{ .html_url }}</span>
         {{ end }}
-        <div class="col-12 text-muted small">
+        <div class="has-text-grey is-size-7">
             {{ partial "_timerange.html" . }}
         </div>
     </div>
     <div class="item-content">
-        <p class="small mb-1">{{ .description | markdownify }}</p>
+        <p class="is-size-7 mb-1">{{ .description | markdownify }}</p>
         <p>
             {{ if isset . "forks_count" }}
-            <span class="badge rounded-pill bg-light text-dark border"><i class="far fa-fw fa-star"></i> {{ partial "_human_number.html" .stargazers_count }}</span>
-            <span class="badge rounded-pill bg-light text-dark border"><i class="fas fa-fw fa-code-branch"></i> {{ partial "_human_number.html" .forks_count }}</span>
+            <span class="tag is-rounded"><i class="far fa-fw fa-star"></i> {{ partial "_human_number.html" .stargazers_count }}</span>
+            <span class="tag is-rounded"><i class="fas fa-fw fa-code-branch"></i> {{ partial "_human_number.html" .forks_count }}</span>
             {{ end }}
             {{ if isset . "package" }}
-            <span class="badge rounded-pill bg-light text-dark border"><i class="fas fa-fw fa-download"></i> {{ partial "_human_number.html" .package.downloads.total }}</span>
+            <span class="tag is-rounded"><i class="fas fa-fw fa-download"></i> {{ partial "_human_number.html" .package.downloads.total }}</span>
             {{ end }}
-            <span class="badge rounded-pill bg-light text-dark border">{{ .language }}</span>
+            <span class="tag is-rounded">{{ .language }}</span>
             {{ range .keywords }}
-            <span class="badge rounded-pill bg-light text-dark border">{{ . }}</span>
+            <span class="tag is-rounded">{{ . }}</span>
             {{ end }}
         </p>
     </div>

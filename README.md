@@ -29,7 +29,7 @@ This website serves as a digital business card and a resume. It includes the fol
 To ensure the website is simple and lightweight, tools and libraries are limited to:
 
 - **[Hugo](https://gohugo.io/)**: static site generator written in Go.
-- **[Bootstrap 5](https://getbootstrap.com/)**: front-end framework.
+- **[Bulma](https://bulma.io/)**: CSS front-end framework.
 - **[SCSS](https://sass-lang.com/)**: CSS preprocessor.
 - **[Vercel](https://vercel.com/)**: cloud platform for static sites and serverless functions.
 - **[FontAwesome](https://fontawesome.com/)**: web icons library.

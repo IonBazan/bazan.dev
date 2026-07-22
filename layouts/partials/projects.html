@@ -1,6 +1,8 @@
-<section id="projects" class="pt-3 row">
+<section id="projects" class="pt-3">
     <h4 class="section-heading">{{ .title }}</h4>
+    <div class="columns is-multiline">
     {{ range sort .projects "order" }}
     {{ partial "project_details.html" . }}
     {{ end }}
+    </div>
 </section>

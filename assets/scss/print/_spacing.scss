@@ -1,6 +1,18 @@
+// Local spacer scale (mirrors Bulma's spacing helpers) so the print-only
+// spacing utilities keep working without depending on Bootstrap's $spacers.
+$print-spacers: (
+  0: 0,
+  1: 0.25rem,
+  2: 0.5rem,
+  3: 0.75rem,
+  4: 1rem,
+  5: 1.5rem,
+  6: 3rem,
+);
+
 @media print {
   @each $prop, $abbrev in (margin: m, padding: p) {
-    @each $size, $length in $spacers {
+    @each $size, $length in $print-spacers {
 
       .#{$abbrev}-print-#{$size} { #{$prop}: $length !important; }
       .#{$abbrev}t-print-#{$size},

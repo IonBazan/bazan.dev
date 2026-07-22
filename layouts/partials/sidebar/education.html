@@ -1,11 +1,11 @@
 <section class="sidebar-section">
     <h4 class="section-heading">Education</h4>
-    <ul class="list-unstyled small">
+    <ul class="is-size-7">
         {{ range . }}
         <li class="mb-2">
-            <div class="fw-bold">{{ .degree }}</div>
-            <a href="{{ .url }}" class="text-muted">{{ .university }}</a>
-            <small class="text-muted">{{ partial "_timerange.html" . }}</small>
+            <div class="has-text-weight-bold">{{ .degree }}</div>
+            <a href="{{ .url }}" class="has-text-grey">{{ .university }}</a>
+            <small class="has-text-grey">{{ partial "_timerange.html" . }}</small>
         </li>
         {{ end }}
     </ul>

@@ -1,7 +1,7 @@
 @import 'spacing';
 
 $print-page-size: a4;
-$print-body-min-width: map-get($grid-breakpoints, "lg");
+$print-body-min-width: 960px;
 
 @media print {
   *,
@@ -12,14 +12,8 @@ $print-body-min-width: map-get($grid-breakpoints, "lg");
   }
 
   a {
-    &:not(.btn) {
+    &:not(.button) {
       text-decoration: underline;
-    }
-  }
-
-  @for $i from 1 through $grid-columns {
-    .col-md-#{$i} {
-      @include make-col($i, $grid-columns);
     }
   }
 
@@ -49,40 +43,8 @@ $print-body-min-width: map-get($grid-breakpoints, "lg");
     min-width: $print-body-min-width !important;
   }
 
-  .badge {
-    border: $border-width solid $black;
-  }
-
-  .table {
-    border-collapse: collapse !important;
-
-    td,
-    th {
-      background-color: $white !important;
-    }
-  }
-
-  .table-bordered {
-    th,
-    td {
-      border: 1px solid $gray-300 !important;
-    }
-  }
-
-  .table-dark {
-    color: inherit;
-
-    th,
-    td,
-    thead th,
-    tbody + tbody {
-      border-color: $table-border-color;
-    }
-  }
-
-  .table .thead-dark th {
-    color: inherit;
-    border-color: $table-border-color;
+  .tag {
+    border: 1px solid #000;
   }
 
   .mw-print-100 {
@@ -92,9 +54,9 @@ $print-body-min-width: map-get($grid-breakpoints, "lg");
     max-height: 100% !important;
   }
 
-  .shadow-print-sm { box-shadow: $box-shadow-sm !important; }
-  .shadow-print { box-shadow: $box-shadow !important; }
-  .shadow-print-lg { box-shadow: $box-shadow-lg !important; }
+  .shadow-print-sm { box-shadow: 0 .125rem .25rem rgba(#0a0a0a, .15) !important; }
+  .shadow-print { box-shadow: 0 .5rem 1rem rgba(#0a0a0a, .15) !important; }
+  .shadow-print-lg { box-shadow: 0 1rem 3rem rgba(#0a0a0a, .175) !important; }
   .shadow-print-none { box-shadow: none !important; }
 
   .print-page-break-avoid {

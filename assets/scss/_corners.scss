@@ -9,7 +9,7 @@
 }
 
 .github-corner .corner {
-  fill: $body-color;
+  fill: var(--bulma-text);
 }
 
 .github-corner:hover .octo-arm {

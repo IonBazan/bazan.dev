@@ -1,12 +1,12 @@
 <section class="print-page-break-avoid">
     <h4 class="section-heading">Education</h4>
-    <ul class="list-unstyled ms-2">
+    <ul class="ml-2">
         {{ range . }}
-        <li class="row">
-            <div class="fw-bold col-sm-6">{{ .degree }}</div>
-            <div class="col-sm-6 text-sm-end">
-            <a href="{{ .url }}" class="text-muted">{{ .university }}</a>
-            <small class="text-muted">{{ partial "_timerange.html" . }}</small>
+        <li class="columns">
+            <div class="has-text-weight-bold column is-6">{{ .degree }}</div>
+            <div class="column is-6 has-text-right-tablet">
+            <a href="{{ .url }}" class="has-text-grey">{{ .university }}</a>
+            <small class="has-text-grey">{{ partial "_timerange.html" . }}</small>
             </div>
         </li>
         {{ end }}

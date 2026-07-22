@@ -1,12 +1,12 @@
 <section class="print-page-break-avoid">
     <h4 class="section-heading">Skills & Tools</h4>
-    <ul class="list-unstyled ms-2">
+    <ul class="ml-2">
         {{ range . }}
-        <li class="row">
-            <div class="col-sm-3">
-                <span class="fw-bold">{{ .name }}</span>
+        <li class="columns">
+            <div class="column is-3">
+                <span class="has-text-weight-bold">{{ .name }}</span>
             </div>
-            <div class="col-sm-9">
+            <div class="column is-9">
                 {{ delimit .skills ", " }}
             </div>
         </li>
