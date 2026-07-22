@@ -1,9 +1,9 @@
 @use '../../node_modules/bulma/sass' with (
   $primary: #0d6efd // keep the Bootstrap-blue accent
 );
-@import 'print/print';
-@import 'corners';
-@import 'webfonts';
+@use 'print/print';
+@use 'corners';
+@use 'webfonts';
 
 body {
   font-size: 0.85rem;
@@ -30,6 +30,15 @@ h6, .h6 { font-size: 1em; }
 }
 
 #resume {
+  // The resume is a white "sheet of paper": scoped to Bulma's light theme
+  // (via data-theme="light" in the template) so it stays white with dark
+  // text even when the surrounding page is in dark mode.
+  // Bulma only applies the body text `color` on <body>, so re-apply the
+  // light-theme text colour here — otherwise unclassed text (name, job
+  // titles, descriptions) inherits the dark-mode body colour and looks grey.
+  background-color: var(--bulma-scheme-main);
+  color: var(--bulma-text);
+
   .profile-image {
     max-width: 180px;
   }

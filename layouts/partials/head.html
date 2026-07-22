@@ -10,6 +10,7 @@
     {{ $opts := dict
     "targetPath" "css/main.css"
     "transpiler" "dartsass"
+    "silenceDeprecations" (slice "if-function")
     "vars" site.Params.styles
     }}
     {{ with . | toCSS $opts | postCSS | minify | fingerprint | resources.PostProcess  }}

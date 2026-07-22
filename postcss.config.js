@@ -6,27 +6,18 @@ const purgecss = purgeCSSPlugin({
         const els = JSON.parse(content).htmlElements;
         return [...(els.tags || []), ...(els.classes || []), ...(els.ids || [])];
     },
+    // hugo_stats.json only tracks tags/classes/ids — Hugo's build stats don't
+    // capture attributes at all — so PurgeCSS's extractor can never see the
+    // `data-theme` attribute Bulma uses for its light/dark theme scoping.
+    // `dynamicAttributes` tells PurgeCSS to always keep any selector on this
+    // attribute regardless of what the extractor observed, which is exactly
+    // what it's designed for (see purgecss.com/configuration.html#dynamic-attributes).
+    dynamicAttributes: ["data-theme"],
     safelist: [],
 });
 
-// This site is light-only. Bulma ships an automatic dark theme via
-// `@media (prefers-color-scheme: dark)`; strip those blocks so dark mode is
-// never applied (and isn't shipped at all), regardless of the visitor's OS.
-const stripDarkScheme = () => ({
-    postcssPlugin: "strip-prefers-color-scheme-dark",
-    AtRule: {
-        media(atRule) {
-            if (/prefers-color-scheme\s*:\s*dark/i.test(atRule.params)) {
-                atRule.remove();
-            }
-        },
-    },
-});
-stripDarkScheme.postcss = true;
-
 export default {
     plugins: [
-        stripDarkScheme(),
         ...(process.env.HUGO_ENVIRONMENT === "production" ? [purgecss] : []),
     ],
 };
