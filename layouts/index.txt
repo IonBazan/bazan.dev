@@ -1,14 +1,65 @@
+{{- $resume := hugo.Data.resume -}}
+{{- $contact := $resume.contact -}}
+{{- $latestJob := index (sort $resume.experience "start" "desc") 0 -}}
 
-   ╭─────────────────────────────────────────────────────────────╮
-   │                                                             │
-   │         Hi, my name is Ion Bazan.                           │
-   │                                                             │
-   │      👨🏻‍💻 Software Engineer @ Wise                            │
-   │      📧 ion.bazan@gmail.com                                 │
-   │      📍 Singapore                                           │
-   │                                                             │
-   │      🐙 https://github.com/IonBazan                         │
-   │      🌏 https://bazan.dev                                   │
-   │      🔗 https://linkedin.com/in/ion-bazan                   │
-   │                                                             │
-   ╰─────────────────────────────────────────────────────────────╯
+{{- /* Terminal emoji render as ~2 columns wide regardless of how many code
+       points they're made of (e.g. the ZWJ "👨🏻‍💻" sequence is 4 runes but
+       still one 2-column glyph), so width math below uses this fixed value
+       rather than a rune count of the emoji itself. */ -}}
+{{- $emojiWidth := 2 -}}
+{{- $baseIndent := 6 -}}
+{{- $rightBuffer := 4 -}}
+{{- $textColumn := add $baseIndent (add $emojiWidth 1) -}}
+{{- $margin := "   " -}}
+
+{{- $greeting := printf "Hi, my name is %s." $resume.name -}}
+{{- $roleLine := printf "%s @ %s" $latestJob.position $latestJob.company -}}
+{{- $githubURL := printf "https://github.com/%s" $contact.github -}}
+{{- $websiteURL := printf "https://%s" $contact.website -}}
+{{- $linkedinURL := printf "https://%s" $contact.linkedin -}}
+
+{{- /* emoji "" marks a line with no icon; text "" marks a blank separator row.
+       The greeting has no icon but still lines its text up with the emoji
+       rows' text column, so all rows read as one clean left-aligned block. */ -}}
+{{- $lines := slice
+    (dict "emoji" "" "text" "")
+    (dict "emoji" "" "text" $greeting)
+    (dict "emoji" "" "text" "")
+    (dict "emoji" "👨🏻‍💻" "text" $roleLine)
+    (dict "emoji" "📧" "text" $contact.email)
+    (dict "emoji" "📍" "text" $contact.location)
+    (dict "emoji" "" "text" "")
+    (dict "emoji" "🐙" "text" $githubURL)
+    (dict "emoji" "🌏" "text" $websiteURL)
+    (dict "emoji" "🔗" "text" $linkedinURL)
+    (dict "emoji" "" "text" "")
+-}}
+
+{{- /* Size the box to whatever the longest line actually needs, instead of
+       a hardcoded width, so it never clips or looks cramped as data changes. */ -}}
+{{- $maxWidth := 0 -}}
+{{- range $lines -}}
+  {{- if .text -}}
+    {{- $w := add $textColumn (strings.RuneCount .text) -}}
+    {{- if gt $w $maxWidth }}{{ $maxWidth = $w }}{{ end -}}
+  {{- end -}}
+{{- end -}}
+{{- $boxWidth := add $maxWidth $rightBuffer -}}
+
+{{- $out := printf "\n%s╭%s╮\n" $margin (strings.Repeat $boxWidth "─") -}}
+{{- range $lines -}}
+  {{- if .text -}}
+    {{- if .emoji -}}
+      {{- $pad := sub $boxWidth (add $textColumn (strings.RuneCount .text)) -}}
+      {{- $out = printf "%s%s│%s%s %s%s│\n" $out $margin (strings.Repeat $baseIndent " ") .emoji .text (strings.Repeat $pad " ") -}}
+    {{- else -}}
+      {{- $pad := sub $boxWidth (add $textColumn (strings.RuneCount .text)) -}}
+      {{- $out = printf "%s%s│%s%s%s│\n" $out $margin (strings.Repeat $textColumn " ") .text (strings.Repeat $pad " ") -}}
+    {{- end -}}
+  {{- else -}}
+    {{- $out = printf "%s%s│%s│\n" $out $margin (strings.Repeat $boxWidth " ") -}}
+  {{- end -}}
+{{- end -}}
+{{- $out = printf "%s%s╰%s╯" $out $margin (strings.Repeat $boxWidth "─") -}}
+
+{{ $out }}
