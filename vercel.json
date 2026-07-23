@@ -15,7 +15,7 @@
         {
           "type": "header",
           "key": "User-Agent",
-          "value": ".*(curl|wget|HTTPie|Postman).*"
+          "value": ".*(curl|wget|HTTPie|Postman|PowerShell).*"
         }
       ]
     }
