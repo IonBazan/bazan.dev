@@ -1,9 +1,14 @@
-@use '../../node_modules/bulma/sass' with (
+@use 'sass:map';
+@use '../../node_modules/bulma/sass' as bulma with (
   $primary: #0d6efd // keep the Bootstrap-blue accent
 );
 @use 'print/print';
 @use 'corners';
 @use 'webfonts';
+
+@function spacing($key) {
+  @return map.get(bulma.$spacing-values, $key);
+}
 
 body {
   font-size: 0.85rem;
@@ -38,6 +43,8 @@ h6, .h6 { font-size: 1em; }
   // titles, descriptions) inherits the dark-mode body colour and looks grey.
   background-color: var(--bulma-scheme-main);
   color: var(--bulma-text);
+
+  margin-bottom: spacing("6") !important;
 
   .profile-image {
     max-width: 180px;
@@ -181,20 +188,19 @@ h6, .h6 { font-size: 1em; }
   .d-print-block { display: block !important; }
 }
 
-// Responsive spacing helpers used in the markup (Bulma spacing is not responsive)
 @media screen and (min-width: 769px) {
-  .px-md-5 { padding-left: 3rem !important; padding-right: 3rem !important; }
-  .pe-md-5 { padding-right: 3rem !important; }
-  .p-md-5 { padding: 3rem !important; }
-  .m-md-5 { margin: 3rem !important; }
-  .m-md-3 { margin: 0.75rem !important; }
-  .mb-md-0 { margin-bottom: 0 !important; }
-  .ml-md-0 { margin-left: 0 !important; }
-  .mr-md-5 { margin-right: 3rem !important; }
+  .px-md-5 { padding-left: spacing("6") !important; padding-right: spacing("6") !important; }
+  .pe-md-5 { padding-right: spacing("6") !important; }
+  .p-md-5 { padding: spacing("6") !important; }
+  .m-md-5 { margin: spacing("6") !important; }
+  .m-md-3 { margin: spacing("3") !important; }
+  .mb-md-0 { margin-bottom: spacing("0") !important; }
+  .ml-md-0 { margin-left: spacing("0") !important; }
+  .mr-md-5 { margin-right: spacing("6") !important; }
 }
 
 @media screen and (min-width: 1024px) {
-  .px-lg-5 { padding-left: 3rem !important; padding-right: 3rem !important; }
+  .px-lg-5 { padding-left: spacing("6") !important; padding-right: spacing("6") !important; }
 }
 
 .error-details {
