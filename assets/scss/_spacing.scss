@@ -1,0 +1,47 @@
+@use 'sass:map';
+@use '../../node_modules/bulma/sass' as bulma;
+
+$spacing-values: map.merge(bulma.$spacing-values, (
+  "7": map.get(bulma.$spacing-values, "6") * 1.5,
+  "8": map.get(bulma.$spacing-values, "6") * 2,
+));
+
+// Bootstrap-style breakpoint suffixes
+$breakpoints: (
+  "md": bulma.$tablet,
+  "lg": bulma.$desktop,
+  "xl": bulma.$widescreen,
+  "xxl": bulma.$fullhd,
+);
+
+@each $breakpoint, $width in $breakpoints {
+  @media screen and (min-width: $width) {
+    @each $property, $shortcut in bulma.$spacing-shortcuts {
+      @each $name, $length in $spacing-values {
+        // All directions
+        .#{$shortcut}-#{$breakpoint}-#{$name} {
+          #{$property}: $length !important;
+        }
+
+        // Cardinal directions
+        @each $direction, $suffix in bulma.$spacing-directions {
+          .#{$shortcut}#{$suffix}-#{$breakpoint}-#{$name} {
+            #{$property}-#{$direction}: $length !important;
+          }
+        }
+
+        // Horizontal axis
+        .#{$shortcut}#{bulma.$spacing-horizontal}-#{$breakpoint}-#{$name} {
+          #{$property}-left: $length !important;
+          #{$property}-right: $length !important;
+        }
+
+        // Vertical axis
+        .#{$shortcut}#{bulma.$spacing-vertical}-#{$breakpoint}-#{$name} {
+          #{$property}-top: $length !important;
+          #{$property}-bottom: $length !important;
+        }
+      }
+    }
+  }
+}

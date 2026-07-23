@@ -5,9 +5,10 @@
 @use 'print/print';
 @use 'corners';
 @use 'webfonts';
+@use 'spacing';
 
 @function spacing($key) {
-  @return map.get(bulma.$spacing-values, $key);
+  @return map.get(spacing.$spacing-values, $key);
 }
 
 body {
@@ -148,7 +149,8 @@ h6, .h6 { font-size: 1em; }
   margin-left: 1.25rem;
 }
 
-@media screen and (min-width: 769px) {
+// Matches the "md" tier used by the responsive spacing helpers (spacing.scss).
+@media screen and (min-width: bulma.$tablet) {
   .sidebar {
     border-left: 1px solid var(--bulma-border) !important;
   }
@@ -186,21 +188,6 @@ h6, .h6 { font-size: 1em; }
 @media print {
   .d-print-none { display: none !important; }
   .d-print-block { display: block !important; }
-}
-
-@media screen and (min-width: 769px) {
-  .px-md-5 { padding-left: spacing("6") !important; padding-right: spacing("6") !important; }
-  .pe-md-5 { padding-right: spacing("6") !important; }
-  .p-md-5 { padding: spacing("6") !important; }
-  .m-md-5 { margin: spacing("6") !important; }
-  .m-md-3 { margin: spacing("3") !important; }
-  .mb-md-0 { margin-bottom: spacing("0") !important; }
-  .ml-md-0 { margin-left: spacing("0") !important; }
-  .mr-md-5 { margin-right: spacing("6") !important; }
-}
-
-@media screen and (min-width: 1024px) {
-  .px-lg-5 { padding-left: spacing("6") !important; padding-right: spacing("6") !important; }
 }
 
 .error-details {
