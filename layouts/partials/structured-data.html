@@ -31,7 +31,7 @@
     "jobTitle" .position
     "description" (.summary | markdownify | plainify | htmlUnescape)
     "url" $pageURL
-    "image" ((resources.Get "img/profile.jpeg").Process "resize 600x q100 webp").RelPermalink
+    "image" ((resources.Get "img/profile.jpeg").Process "resize 600x q100 webp").Permalink
     "email" (printf "mailto:%s" $contact.email)
     "telephone" $contact.phone
     "address" $contact.location

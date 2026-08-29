@@ -9,9 +9,11 @@ A Hugo static site with two purposes: a minimal personal landing page (`/`) and 
 résumé (`/resume`) driven entirely by YAML data. It deploys to Vercel on every push to `main`.
 
 The project's explicit design goal (see [README.md](README.md)) is to stay **small and
-lightweight**: no blocking JavaScript, no cookies, no client-side framework, minimal custom CSS.
-Every change should be weighed against that goal — prefer a framework utility class or a config
-tweak over new custom code.
+lightweight**: no client-side framework, no bundler, minimal custom CSS, and no more JavaScript
+than a feature genuinely requires. Two deliberate exceptions exist today — the Google Analytics
+snippet (which does set cookies) and the handful of inline lines behind the theme toggle. Neither
+is a licence to add more. Every change should be weighed against that goal — prefer a framework
+utility class or a config tweak over new custom code.
 
 ## Stack
 
@@ -21,7 +23,9 @@ tweak over new custom code.
 - **Dart Sass** via Hugo's built-in `toCSS` pipeline (`layouts/partials/head.html`).
 - **PostCSS + PurgeCSS** (production builds only) — strips unused CSS.
 - **FontAwesome** (free) for icons.
-- No client-side JS beyond `window.print()` and a Google Analytics snippet.
+- No client-side JS beyond `window.print()`, a Google Analytics snippet, and the theme
+  toggle (an inline script in `head.html` plus `partials/scripts.html`). Keep it that way —
+  there is no bundler, and nothing here should need one.
 
 ## Repository layout
 
@@ -40,16 +44,18 @@ build.sh          Vercel build script (installs a pinned Dart Sass, then `hugo -
 under `data/resume/` — never hardcode content into templates.
 
 Every file under `data/` has a matching JSON Schema in `schemas/`, wired up via a
-`# yaml-language-server: $schema=...` comment on the file's first line (works in VSCode with the
-`redhat.vscode-yaml` extension — recommended in `.vscode/extensions.json` — and in recent
-JetBrains IDEs automatically). `.vscode/settings.json` also glob-maps whole directories
-(`data/resume/experience/*.yaml`, etc.) as a fallback that covers new files without needing the
-comment. If you add or rename a field in a data file, **update the matching schema in `schemas/`
+`# yaml-language-server: $schema=...` line at the top of the file (works in VSCode with the
+`redhat.vscode-yaml` extension, and in recent JetBrains IDEs automatically). `.vscode/` is
+deliberately **not** tracked here — the owner ignores it globally — so that `$schema` line is the
+only wiring that ships: every new data file needs one, and don't rely on editor settings to
+supply it. If you add or rename a field in a data file, **update the matching schema in `schemas/`
 in the same change** — a schema that lies about the shape of the data is worse than no schema.
 `data/resume/projects/*.yaml` and `data/resume/open_source/*.yaml` intentionally share one schema
-(`project-item.schema.json`), since both are rendered through the same partial. Note:
-`data/resume.yaml`'s `languages:` block and `data/resume/languages.yaml` are duplicates of each
-other — pre-existing, not introduced by the schemas; keep both in sync if you change either.
+(`project-item.schema.json`), since both are rendered through the same partial. Note that
+Hugo merges `data/resume.yaml` and the `data/resume/` directory into the same
+`hugo.Data.resume` map, so a key defined in both places collides and the directory file wins
+silently. Languages used to be duplicated this way and now live only in
+`data/resume/languages.yaml` — keep one home per key.
 
 ## Structured data
 
@@ -79,8 +85,7 @@ told otherwise. To preview the unused variant, temporarily set `layout: "resume"
   `ms-`/`me-`). Components: `.tag`, `.button`, `.section-heading` (custom, see below).
 - Only add custom CSS in `assets/scss/main.scss` when Bulma genuinely has no equivalent (e.g.
   `.shadow`, `.border`, `.min-vh-100`, `.d-print-*`, a couple of responsive spacing helpers Bulma
-  doesn't ship). When you do, **comment why Bulma doesn't cover it** — the existing custom rules
-  all explain their reason for existing; keep that pattern.
+  doesn't ship).
 - Prefer Bulma's CSS custom properties (`var(--bulma-primary)`, `var(--bulma-text)`,
   `var(--bulma-border)`, …) over hardcoded colors, so dark mode and future theme tweaks keep
   working without touching every rule.
@@ -90,15 +95,53 @@ told otherwise. To preview the unused variant, temporarily set `layout: "resume"
   silenced via `silenceDeprecations` in `head.html` — that's expected and not something to "fix"
   by touching `node_modules`.
 
+## Comments
+
+**Don't add comments.** Default to none. Names, structure and small functions should carry the
+intent, and the reasoning behind this project's decisions belongs in this file, where it stays
+findable, rather than scattered across the source.
+
+Write one only when the code is genuinely tricky — a non-obvious workaround, or something a
+reader would otherwise "tidy up" and break — and then keep it to a line or two. A comment that
+restates what the next line does, explains a change to a reviewer, or justifies why an approach
+is correct is noise; delete it. If an explanation needs a paragraph, it belongs in AGENTS.md.
+
 ## Dark mode & the resume "paper" trick
 
-The site follows the visitor's OS theme (`prefers-color-scheme`) via Bulma's automatic dark mode.
+The site follows the visitor's OS theme (`prefers-color-scheme`) via Bulma's automatic dark mode,
+and a toggle lets the visitor override that. Three pieces:
+
+- **`partials/head.html`** — an inline, synchronous script reads `localStorage.theme` and sets
+  `data-theme` (the override) plus `data-theme-choice` (`system`/`light`/`dark`) on `<html>`
+  *before first paint*. It must stay inline and blocking; deferring it reintroduces a flash of
+  the wrong theme.
+- **`partials/theme-toggle.html` + `partials/scripts.html`** — the button (rendered site-wide
+  from the otherwise-empty `footer.html`) and the click handler that cycles
+  System → Light → Dark. Choosing "system" clears both the attribute and the stored value.
+- **`main.scss`** — `data-theme-choice` doubles as a "JS ran" flag: the button is `display: none`
+  until it appears, so visitors without JS never see a dead control. All three icons are in the
+  markup and CSS shows the active one — PurgeCSS only keeps classes it can see, so swapping icon
+  classes from JS would strip them in production. `data-theme-choice` is registered in
+  `postcss.config.js`'s `dynamicAttributes` for the same reason `data-theme` is.
+
 The résumé is a deliberate exception: `<article id="resume">` is pinned to
 `data-theme="light"` in both resume layouts, plus a matching `background-color`/`color` override
 in `main.scss`, so it always renders as a white printable "sheet of paper" regardless of the
 page's theme. Don't remove that pinning without understanding why it's there — Bulma only sets
 body-level `color` on `<body>`, so unclassed text inside a `data-theme` scope needs the color
 re-applied explicitly, or it silently inherits the wrong theme's grey.
+
+**The same trap has a second, sneakier form.** Bulma registers some *derived* custom properties
+only on `:root` — `--bulma-strong-color: var(--bulma-text-strong)`,
+`--bulma-hr-background-color`, `--bulma-label-color`, `--bulma-skeleton-background`. The
+indirection is resolved once in the root's theme, so the *resolved* value inherits into the
+light-pinned résumé even though `data-theme="light"` correctly flips the base variable. The
+symptom is `<strong>` (and `<hr>`) keeping dark-mode colours on a white page. `main.scss`
+re-derives those four inside `#resume`; if a future Bulma version adds more, re-derive them the
+same way. To find them, snapshot every `--bulma-*` on `#resume` with the root set to `light`,
+then again with it set to `dark`, and diff — anything that differs is leaking.
+(`--bulma-body-color`/`--bulma-body-background-color` leak too but only style `<html>`/`<body>`,
+which can't match inside the article, so they're intentionally left alone.)
 
 ## Print / résumé page budget
 
@@ -125,13 +168,18 @@ restart.
 There's no test suite. Verify changes by:
 
 1. **Build clean, both modes** — dev builds don't run PurgeCSS, production builds do, and
-   they can differ:
+   they can differ. Note that bare `hugo` **already defaults to the production environment**
+   (only `hugo server` defaults to development), so you must ask for development explicitly —
+   otherwise you build the same thing twice and learn nothing:
    ```bash
-   hugo --gc --minify
-   HUGO_ENVIRONMENT=production hugo --gc --minify
+   hugo -e development --gc --minify   # unpurged (~816 KB CSS)
+   hugo --gc --minify                  # production, PurgeCSS runs (~222 KB CSS)
    ```
+   A production CSS anywhere near the development size means PurgeCSS silently did nothing.
 2. **Visual check** — home (`/`), résumé (`/resume`), and 404, at both mobile and desktop widths,
-   in both light and dark OS color-scheme emulation.
+   in both light and dark OS color-scheme emulation. If you touched theming, also cycle the
+   toggle through all three states and reload, to confirm the choice persists and the résumé
+   still renders identically in either theme.
 3. **Print check** — the résumé must fit 2 pages. This can be checked headlessly:
    ```bash
    /Applications/Google\ Chrome.app/Contents/MacOS/Google\ Chrome \

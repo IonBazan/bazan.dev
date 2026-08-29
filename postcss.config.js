@@ -12,7 +12,7 @@ const purgecss = purgeCSSPlugin({
     // `dynamicAttributes` tells PurgeCSS to always keep any selector on this
     // attribute regardless of what the extractor observed, which is exactly
     // what it's designed for (see purgecss.com/configuration.html#dynamic-attributes).
-    dynamicAttributes: ["data-theme"],
+    dynamicAttributes: ["data-theme", "data-theme-choice"],
     safelist: [],
 });
 

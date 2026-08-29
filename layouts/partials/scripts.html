@@ -1,0 +1,38 @@
+<script>
+    (function () {
+        var button = document.getElementById("theme-toggle");
+        if (!button) { return; }
+
+        var root = document.documentElement;
+        var order = ["system", "light", "dark"];
+        var labels = {
+            system: "Colour theme: following system. Switch to light.",
+            light: "Colour theme: light. Switch to dark.",
+            dark: "Colour theme: dark. Switch to system."
+        };
+
+        function apply(choice) {
+            root.setAttribute("data-theme-choice", choice);
+            if (choice === "system") {
+                root.removeAttribute("data-theme");
+            } else {
+                root.setAttribute("data-theme", choice);
+            }
+            button.setAttribute("aria-label", labels[choice]);
+            button.setAttribute("title", labels[choice]);
+            try {
+                if (choice === "system") {
+                    localStorage.removeItem("theme");
+                } else {
+                    localStorage.setItem("theme", choice);
+                }
+            } catch (e) {}
+        }
+
+        apply(root.getAttribute("data-theme-choice") || "system");
+
+        button.addEventListener("click", function () {
+            apply(order[(order.indexOf(root.getAttribute("data-theme-choice")) + 1) % order.length]);
+        });
+    })();
+</script>

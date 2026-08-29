@@ -45,6 +45,11 @@ h6, .h6 { font-size: 1em; }
   background-color: var(--bulma-scheme-main);
   color: var(--bulma-text);
 
+  --bulma-strong-color: var(--bulma-text-strong);
+  --bulma-hr-background-color: var(--bulma-background);
+  --bulma-label-color: var(--bulma-text-strong);
+  --bulma-skeleton-background: var(--bulma-border);
+
   margin-bottom: spacing("6") !important;
 
   .profile-image {
@@ -111,7 +116,7 @@ h6, .h6 { font-size: 1em; }
       width: 15px;
       height: 15px;
       border: 4px solid var(--bulma-grey);
-      background: #fff;
+      background: var(--bulma-scheme-main);
       border-radius: 50%;
     }
   }
@@ -161,6 +166,50 @@ h6, .h6 { font-size: 1em; }
   display: none;
 }
 
+.theme-toggle {
+  display: none;
+}
+
+[data-theme-choice] .theme-toggle {
+  position: fixed;
+  right: 1rem;
+  bottom: 1rem;
+  z-index: 30;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  font-size: 1rem;
+  line-height: 1;
+  cursor: pointer;
+  color: var(--bulma-text);
+  background-color: var(--bulma-scheme-main);
+  border: 1px solid var(--bulma-border);
+  border-radius: 9999px;
+
+  &:hover {
+    color: var(--bulma-primary);
+    border-color: var(--bulma-primary);
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--bulma-primary);
+    outline-offset: 2px;
+  }
+}
+
+.theme-icon {
+  display: none;
+}
+
+[data-theme-choice="system"] .theme-icon-system,
+[data-theme-choice="light"] .theme-icon-light,
+[data-theme-choice="dark"] .theme-icon-dark {
+  display: block;
+}
+
 // Shadow utilities (Bulma has no standalone shadow helper).
 // Scoped to screen so they never fight the print reset (which strips shadows);
 // this also preserves the `shadow-print-none` behaviour when printing.
@@ -201,5 +250,5 @@ h6, .h6 { font-size: 1em; }
 }
 
 hr {
-  color: black;
+  color: var(--bulma-text);
 }

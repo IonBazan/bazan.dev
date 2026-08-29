@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-: ${DART_SASS_VERSION:="1.97.2"}
+: ${DART_SASS_VERSION:="1.101.0"}
 
 mkdir -p "${HOME}/.local"
 
@@ -12,4 +12,4 @@ tar -C "${HOME}/.local" -xf "dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz"
 rm "dart-sass-${DART_SASS_VERSION}-linux-x64.tar.gz"
 export PATH="${HOME}/.local/dart-sass:${PATH}"
 
-hugo -D --gc --minify
+hugo --gc --minify

@@ -42,11 +42,6 @@
         }
       }
     },
-    "languages": {
-      "type": "object",
-      "description": "Map of language name to proficiency level. NOTE: this duplicates data/resume/languages.yaml — keep both in sync, or consolidate to one source.",
-      "additionalProperties": { "type": "string" }
-    },
     "interests": {
       "type": "array",
       "items": { "type": "string" }

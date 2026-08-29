@@ -4,8 +4,7 @@
  */
 .github-corner svg {
   clip-path: polygon(0 0, 100% 0, 100% 100%);
-  fill: white;
-  mix-blend-mode: darken;
+  fill: var(--bulma-scheme-main);
 }
 
 .github-corner .corner {

@@ -20,7 +20,8 @@ This website serves as a digital business card and a resume. It includes the fol
 
 - **Responsive Design**: fully responsive and optimized for various screen sizes.
 - **Minimalistic Design**: clean and minimalistic design, focusing on content.
-- **Lightweight**: no blocking JavaScript, no cookies, just HTML and CSS.
+- **Lightweight**: no client-side framework — essentially just HTML and CSS. The only scripts are a Do Not Track-aware Google Analytics snippet (which sets its own cookies) and a few inline lines for the theme toggle.
+- **Dark mode**: follows your operating system's colour scheme by default, with a toggle to cycle System → Light → Dark. Your choice is remembered in `localStorage` (no cookie) and applied before the page paints, so there's no flash of the wrong theme. The resume stays a printable white "sheet of paper" either way.
 - **Printable**: optimized for printing (especially the resume), so you can easily generate a PDF version of it.
 - **SEO-friendly**: optimized for search engines, with proper meta tags and structured data.
 
